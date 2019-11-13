@@ -43,22 +43,22 @@ class ExhibitionSerializer(serializers.ModelSerializer):
     gallery = NestedGallerySerializer()
     category = NestedCategorySerializer(many=True)
 
-    def create(self, data)
+    def create(self, data):
         gallery_data = data.pop('gallery')
-        categories_data = data.pop('category')
+        category_data = data.pop('category')
 
         exhibition = Exhibition(**data)
-        station.gallery = Gallery.objects.get(**gallery_data)
-        categories = [Category.objects.get(**categories_data) for category_data in categories_data ]
+        exhibition.gallery = Gallery.objects.get(**gallery_data)
+        category = [Category.objects.get(**category_data) for category_data in category_data ]
         exhibition.save()
-        exhibition.categories.set(categories)
+        exhibition.category.set(category)
         return exhibition
 
 
 
     def update(self, exhibition, data):
         gallery_data = data.pop('gallery')
-        categories_data = data.pop('category')
+        category_data = data.pop('category')
 
         exhibition = Exhibition(**data)
         exhibition.title = data.get('title', exhibition.title)
@@ -70,9 +70,9 @@ class ExhibitionSerializer(serializers.ModelSerializer):
         exhibition.rough_price = data.get('rough_price', exhibition.rough_price)
         exhibition.postcode = data.get('postcode', exhibition.postcode)
         exhibition.gallery = Gallery.objects.get(**gallery_data)
-        categories = [Category.objects.get(**categories_data) for category_data in categories_data]
+        category = [Category.objects.get(**category_data) for category_data in category_data]
         exhibition.save()
-        exhibition.categories.set(categories)
+        exhibition.category.set(category)
         return exhibition
 
         

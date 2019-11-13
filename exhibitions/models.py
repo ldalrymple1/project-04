@@ -24,9 +24,9 @@ class Exhibition(models.Model):
     artist = models.CharField(max_length=20)
     start_date = models.DateField()
     end_date = models.DateField()
-    image = models.CharField(max_length=100)
+    image = models.CharField(max_length=300)
     description = models.TextField(default='')
-    rough_price = models.DecimalField(max_digits=10, decimal_places=2, null=True)
+    rough_price = models.DecimalField(max_digits=10, decimal_places=2, null=True) # add blank=True as well if you don't want it to be required
     postcode = models.CharField(max_length=8)
     gallery = models.ForeignKey(
       Gallery,
