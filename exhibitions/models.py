@@ -1,40 +1,43 @@
 from django.db import models
 
-# CATEGORY MODEL
-# class Category(models.Model):
-#     category = models.CharField(max_length=50)
-
-#     def __str__(self):
-#         return f'{self.category}'
 
 
-# ARTIST MODEL
-class Artist(models.Model):
+# GALLERY MODEL
+class Gallery(models.Model):
     name = models.CharField(max_length=50)
 
     def __str__(self):
         return f'{self.name}'
 
+# CATEGORY MODEL
+class Category(models.Model):
+    category = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f'{self.category}'
+    
+
 
 # EXHIBITION MODEL
 class Exhibition(models.Model):
     title = models.CharField(max_length=200)
+    artist = models.CharField(max_length=20)
     start_date = models.DateField()
     end_date = models.DateField()
     image = models.CharField(max_length=100)
-    description = models.TextField(max_length=1000)
+    description = models.TextField(default='')
     rough_price = models.DecimalField(max_digits=10, decimal_places=2, null=True)
     postcode = models.CharField(max_length=8)
-    artist = models.ForeignKey(
-      Artist,
+    gallery = models.ForeignKey(
+      Gallery,
       related_name='exhibitions',
       on_delete=models.DO_NOTHING,
       null=True #foreign key = integer so has to be null
     )
-    # category = models.ManyToManyField(
-    #   Category,
-    #   related_name='exhibitions'
-    # )
+    category = models.ManyToManyField(
+      Category,
+      related_name='exhibitions'
+    )
 
     def __str__(self):
         return f'{self.title}'
