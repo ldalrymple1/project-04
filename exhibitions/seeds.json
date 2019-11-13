@@ -1,0 +1,41 @@
+[
+{
+  "model": "exhibitions.exhibition",
+  "pk": 1,
+  "fields": {
+    "title": "Grayson Perry - Super Rich Interior Decoration",
+    "start_date": "2019-09-25",
+    "end_date": "2019-12-20",
+    "image": "https://d3rtf5gv0re40d.cloudfront.net/anzax/5a/5a71ed42-5679-4c50-815a-2450603202bb_1500_938.jpg",
+    "description": "For his first solo exhibition at the gallery since 2012-and first exhibition at Victoria Miro Mayfair-Grayson Perry presents new work including pots, sculpture, large-scale prints, a tapestry and a carpet.\r\n\r\nIn these new works, the artist casts an anthropological eye on the heady collision of art, money, power and desire. The assertion of identity through cultural or consumer choices and what these reveal about us, perhaps unintentionally, is one theme of a show that broaches the slippery concepts of meaning and significance\u2013what can be authentically experienced or simply acquired. New pots include Shopping for Meaning, adorned with images of the artist\u2013in wig, headscarf and various outfits\u2013standing in front of Mayfair's designer stores, their logos visible behind him. Searching for Authenticity collects together symbols of rebellion and rites of passage - the leather jacket, the beard, the CND banner\u2013as if they were a catalogue of lifestyle choices.",
+    "rough_price": "0.00",
+    "postcode": "W1S1FE"
+  }
+},
+{
+  "model": "exhibitions.exhibition",
+  "pk": 2,
+  "fields": {
+    "title": "Olafur Eliasson in Real Life",
+    "start_date": "2019-07-11",
+    "end_date": "2020-01-05",
+    "image": "https://apollo.imgix.net/content/uploads/2019/08/Olafur-Eliasson-Your-uncertain-shadow-colour-2010.j",
+    "description": "In Eliasson\u2019s captivating installations you become aware of your senses, people around you and the world beyond.\r\n\r\nSome artworks introduce natural phenomena such as rainbows to the gallery space. Others use reflections and shadows to play with the way we perceive and interact with the world. Many works result from the artist\u2019s research into complex geometry, motion patterns, and his interest in colour theory. All but one of the works have never been seen in the UK before.\r\n\r\nWithin the exhibition is an area which explores Eliasson\u2019s deep engagement with society and the environment. Discover what an artist\u2019s perspective can bring to issues of climate change, energy, migration as well as architecture.\r\n\r\nThe kitchen team at Studio Olafur Eliasson have created a special menu and programme of related events for Tate Modern\u2019s Terrace Bar, based on the organic, vegetarian and locally sourced food served in his Berlin studio.\r\n\r\nEliasson has a long relationship with Tate Modern.",
+    "rough_price": "15.00",
+    "postcode": "SE1 9TG"
+  }
+},
+{
+  "model": "exhibitions.exhibition",
+  "pk": 3,
+  "fields": {
+    "title": "Bridget Riley",
+    "start_date": "2019-10-23",
+    "end_date": "2020-01-26",
+    "image": "https://www.itsnicethat.com/system/files/062015/5577fafd7e74a9263700120d/images_slice_large/8_Red-Wi",
+    "description": "English painter Bridget Riley takes over the Hayward Gallery this winter, in a major retrospective of her decades-long career. The display brings together pieces including black-and-white optical illusion paintings from the 1960s and her well-known colour canvases that she describes as \u2018multifocal\u2019. You can also see some rarely-before-shown works from across Riley\u2019s career, including drawings and studies that have influenced her better-known pieces.",
+    "rough_price": "17.00",
+    "postcode": "SE1 8XX"
+  }
+}
+]
