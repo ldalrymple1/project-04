@@ -1,4 +1,6 @@
+from djmoney.models.fields import MoneyField
 from django.db import models
+
 
 
 
@@ -26,7 +28,7 @@ class Exhibition(models.Model):
     end_date = models.DateField()
     image = models.CharField(max_length=300)
     description = models.TextField(default='')
-    rough_price = models.DecimalField(max_digits=10, decimal_places=2, null=True) # add blank=True as well if you don't want it to be
+    rough_price = MoneyField(max_digits=10, decimal_places=2, null=True, default_currency='GBP') # add blank=True as well if you don't want it to be
     postcode = models.CharField(max_length=8)
     gallery = models.ForeignKey(
       Gallery,

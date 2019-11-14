@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+# import moneyed
+# from moneyed.localization import _FORMATTER
+# from decimal import ROUND_HALF_EVEN
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -40,7 +43,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'exhibitions',
     'jwt_auth',
-    'frontend'
+    'frontend',
+    'djmoney'
 ]
 
 MIDDLEWARE = [
@@ -120,6 +124,31 @@ USE_L10N = True
 
 USE_TZ = True
 
+ # DJANGO-MONEY
+
+# GBP = moneyed.add_currency(
+#     code='GBP',
+#     numeric='826',
+#     name='Pound Sterling',
+#     countries=('UK', )
+# )
+
+# _FORMATTER.add_sign_definition(
+#     'default',
+#     GBP,
+#     prefix=u'£ '
+# )
+
+# _FORMATTER.add_formatting_definition(
+#     'en_GB',
+#     group_size=3, group_separator=".", decimal_point=",",
+#     positive_sign="",  trailing_positive_sign="",
+#     negative_sign="-", trailing_negative_sign="",
+#     rounding_method=ROUND_HALF_EVEN
+# )
+
+CURRENCIES = ('GBP')
+CURRENCY_CHOICES = [('GBP', 'GBP £')]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
