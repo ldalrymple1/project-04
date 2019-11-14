@@ -30,40 +30,44 @@ class MapExhibitionsIndex extends React.Component {
   //     .catch(err => console.log(err))
   // }
 
-
-  componentDidMount() {
-    axios.get('/api/exhibitions')
-      .then(res => this.setState({ exhibitions: res.data }))
-      .catch(err => console.log(err))
-    
-  }
-
-  
-
   populateMap() {
     this.state.exhibitions.map(exhib => {
-      {console.log(exhib.postcode)}
       axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${exhib.postcode.replace(' ','')}.json?access_token=${process.env.MAPBOX_ACCESS_TOKEN}`)
         .then(res => {
           const long = res.data.features[0].geometry.coordinates[0]
           const lat = res.data.features[0].geometry.coordinates[1]
-          this.setState({ exhibPins: [...this.state.exhibPins, { long, lat }] })
+          const _id = exhib._id
+          console.log(exhib.postcode)
+          this.setState({ exhibPins: [...this.state.exhibPins, { _id, long, lat }] })
         })
         .catch(err => console.log(err))
 
     })
    
   }
+
+  componentDidMount() {
+    axios.get('/api/exhibitions')
+      .then(res => this.setState({ exhibitions: res.data }))
+      .then(() => this.populateMap())
+      .catch(err => console.log(err))
+    
+  }
+
+  
+
+  
   // map the exhibs 
 
   // .then(res => this.setState({ bikepoints: res.data }))
 
   render() {
-    console.log(this.state, 'state re render')
-    console.log(this.state.exhibPins, 'locations')
+    if (!this.state.exhibPins) return null
+    if (!this.state.exhibitions) return null
+    // console.log(this.state, 'state re render')
+    console.log(this.state, 'locations')
     return (
       <div>
-        {this.populateMap()}
         <h1>map</h1>
         <ReactMapGL {...this.state.viewport}
           mapboxApiAccessToken={process.env.MAPBOX_ACCESS_TOKEN}
@@ -72,6 +76,15 @@ class MapExhibitionsIndex extends React.Component {
           width={'90vw'}
           height={'70vh'}
         >
+          {this.state.exhibPins.map((exhib, i) => (
+            <Marker
+              key={i}           
+              longitude={exhib.long}
+              latitude={exhib.lat}
+            >
+              <div>🐷</div>
+            </Marker>
+          ))}
         </ReactMapGL>
 
 
