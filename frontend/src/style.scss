@@ -1,1 +1,33 @@
+* {
+  box-sizing: border-box;
+}
 
+body {
+  display:flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.index-card-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 0 20px;
+  
+
+  .index-card {
+    height: 420px;
+    width: 340px;
+    border: 2px solid black;
+    margin: 5px;
+
+
+    .card-images {
+      height: 250px;
+      width: 300px;
+      transform: scale(0.9);
+    }
+
+  }
+}
