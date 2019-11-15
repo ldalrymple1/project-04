@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactMapGL, { Marker } from  'react-map-gl'
+import ReactMapGL, { Marker, GeolocateControl } from  'react-map-gl'
 import axios from 'axios'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
@@ -72,10 +72,13 @@ class MapExhibitionsIndex extends React.Component {
         <ReactMapGL {...this.state.viewport}
           mapboxApiAccessToken={process.env.MAPBOX_ACCESS_TOKEN}
           mapStyle={`mapbox://styles/mapbox/streets-v9?access_token=${process.env.MAPBOX_ACCESS_TOKEN}`}
-          onViewportChange={(viewport) => this.setState({ viewport })}
           width={'90vw'}
           height={'70vh'}
-        >
+          onViewportChange={(viewport) => this.setState({ viewport })}>
+          <GeolocateControl 
+            positionOptions={{ enableHighAccuracy: true }}
+            trackUserLocation={true}
+          />  
           {this.state.exhibPins.map((exhib, i) => (
             <Marker
               key={i}           
