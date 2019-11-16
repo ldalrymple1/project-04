@@ -10,10 +10,10 @@ class Home extends React.Component {
 
   render () {
     return (
-      <div>
-        <h1>EXPOSURE</h1>
-        <Link to='/gallery-register'><button>Are you a gallery?</button></Link>
-        <button>Are you a visitor?</button>
+      <div className="home-wrapper">
+        <h1 className="home-title">EXPOSURE</h1>
+        <Link to='/gallery-register'><button className="home">Are you a gallery?</button></Link>
+        <button className="home">Are you a visitor?</button>
 
 
       </div>

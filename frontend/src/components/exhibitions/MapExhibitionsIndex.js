@@ -71,13 +71,14 @@ class MapExhibitionsIndex extends React.Component {
     // console.log(this.state, 'state re render')
     console.log(this.state, 'locations')
     return (
-      <div>
+      <div className="map-wrapper">
         <h1>map</h1>
         <ReactMapGL {...this.state.viewport}
           mapboxApiAccessToken={process.env.MAPBOX_ACCESS_TOKEN}
           mapStyle={`mapbox://styles/mapbox/streets-v9?access_token=${process.env.MAPBOX_ACCESS_TOKEN}`}
           width={'90vw'}
           height={'80vh'}
+          margin={'auto'}
           onViewportChange={(viewport) => this.setState({ viewport })}>
           <GeolocateControl 
             positionOptions={{ enableHighAccuracy: true }}

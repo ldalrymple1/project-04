@@ -38,7 +38,7 @@ class ExhibitionShow extends React.Component {
           <h2>{exhib.title}</h2>
           <img src={exhib.image} alt={exhib.title} />
           <p>{exhib.start_date} - </p> <p>{exhib.end_date}</p>
-          <p>{exhib.description}</p>
+          <p className="description">{exhib.description}</p>
           <p>{exhib.rough_price}</p>
         </div>
       </div>

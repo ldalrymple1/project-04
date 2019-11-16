@@ -1,7 +1,7 @@
 
 
 
-@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Oswald:300&display=swap');
 
 * {
   box-sizing: border-box;
@@ -17,6 +17,8 @@ main {
   height: 100vh;
 }
 
+// NAV BAR
+
 nav {
   height: 50px;
   display: flex;
@@ -26,11 +28,40 @@ nav {
   justify-content: flex-end;
   // background: chartreuse;
   align-items: center;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 22px;
+  
+
   
 }
 
 nav > a > p {
   text-decoration: none;
+  margin: 5px 20px;
+  // color:  #E83F6F;
+}
+
+// HOME PAGE 
+
+.home-wrapper {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.home-title {
+  font-family: 'Bebas Neue', cursive;
+  text-align: center;
+  font-size: 230px;
+  border-top: 2px solid red;
+  border-bottom: 2px solid red;
+
+}
+
+button.home {
   margin: 10px;
 }
 
@@ -62,6 +93,11 @@ input.u-full-width.error {
   border: 1px solid red;
 }
 
+h1.index-title {
+  font-family: 'Bebas Neue', cursive;
+  text-align: center;
+}
+
 .index-card-wrapper {
   display: flex;
   flex-direction: row;
@@ -71,21 +107,21 @@ input.u-full-width.error {
   // background: chartreuse;
   
 
-  .index-card {
-    height: 420px;
-    width: 340px;
-    border: 2px solid black;
-    margin: 5px;
+  // .index-card {
+  //   height: 420px;
+  //   width: 340px;
+  //   border: 2px solid black;
+  //   margin: 5px;
+  // }
 
+  // .img-responsive  {
+  //   height: 250px;
+  //   width: 300px;
+  //   transform: scale(0.9);
+  // }
 
-    .img-responsive  {
-      height: 250px;
-      width: 300px;
-      transform: scale(0.9);
-    }
-
-  }
 }
+
 
 .card {
   margin: 15px;
@@ -151,7 +187,44 @@ input.u-full-width.error {
   flex-direction: row;
 }
 
+// EXHIBITION SHOW PAGE
+
+.show-wrapper {
+  margin:auto;
+  margin: 100px;
+  width: 70%;
+  font-family: 'Oswald', sans-serif;
+
+
+
+}
+
+.show-wrapper > img {
+  width: 70%;
+  margin: auto;
+}
+
+p.description {
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+}
+
+
+
+
 // MAPBOX
+
+.map-wrapper {
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+
+}
+
+// .overlays {
+//  display: flex;
+//  justify-content: center;
+// }
 
 .my-icon {
   background-image: url('https://docs.mapbox.com/mapbox-gl-js/assets/washington-monument.jpg');

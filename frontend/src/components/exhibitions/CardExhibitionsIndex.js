@@ -37,7 +37,7 @@ class CardExhibitionsIndex extends React.Component {
     
     return (
       <div>
-        <h1>Hello Index Page</h1>
+        <h1 className="index-title">Exposure</h1>
         <div className="row searchbar">
           <div className="twelve columns search-field">
             <input
