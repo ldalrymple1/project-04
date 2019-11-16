@@ -6,9 +6,14 @@ import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
 import CardExhibitionsIndex from './components/exhibitions/CardExhibitionsIndex'
 import MapExhibitionsIndex from './components/exhibitions/MapExhibitionsIndex'
 import CalendarExhibitionsIndex from './components/exhibitions/CalendarExhibitionsIndex'
+import ExhibitionShow from './components/exhibitions/ExhibitionShow'
 
 // COMMON
 import Home from './components/common/Home'
+
+// AUTH
+import Register from './components/auth/Register'
+import Login from './components/auth/Login'
 
 // IMPORT STYLES 
 import './style.scss'
@@ -26,6 +31,9 @@ const App = () => (
         <Link to='/'><p>HomePage</p></Link>
       </nav>
       <Switch>
+        <Route path='/exhibitions/:id' component={ExhibitionShow} />
+        <Route path='/gallery-login' component={Login} />
+        <Route path='/gallery-register' component={Register} />
         <Route path='/exhibitions-calendar' component={CalendarExhibitionsIndex} />
         <Route path='/exhibitions-map' component={MapExhibitionsIndex} />
         <Route path='/exhibitions' component={CardExhibitionsIndex} />

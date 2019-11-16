@@ -1,5 +1,6 @@
 import React from 'react'
-import ReactMapGL, { Marker, GeolocateControl } from  'react-map-gl'
+import { Link } from 'react-router-dom'
+import ReactMapGL, { Marker, GeolocateControl, Popup } from  'react-map-gl'
 import axios from 'axios'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
@@ -17,6 +18,7 @@ class MapExhibitionsIndex extends React.Component {
       },
       exhibitions: [],
       exhibPins: []
+      // popupInfo: null
 
     
     } 
@@ -54,6 +56,8 @@ class MapExhibitionsIndex extends React.Component {
     
   }
 
+
+
   
 
   
@@ -73,7 +77,7 @@ class MapExhibitionsIndex extends React.Component {
           mapboxApiAccessToken={process.env.MAPBOX_ACCESS_TOKEN}
           mapStyle={`mapbox://styles/mapbox/streets-v9?access_token=${process.env.MAPBOX_ACCESS_TOKEN}`}
           width={'90vw'}
-          height={'70vh'}
+          height={'80vh'}
           onViewportChange={(viewport) => this.setState({ viewport })}>
           <GeolocateControl 
             positionOptions={{ enableHighAccuracy: true }}
@@ -85,9 +89,12 @@ class MapExhibitionsIndex extends React.Component {
               longitude={exhib.long}
               latitude={exhib.lat}
             >
-              <div>🐷</div>
+              <div>🎨</div>
+              
             </Marker>
-          ))}
+             
+          ))} 
+  
         </ReactMapGL>
 
 
@@ -98,3 +105,32 @@ class MapExhibitionsIndex extends React.Component {
 }
 
 export default MapExhibitionsIndex
+
+{/* <Marker
+  key={i}           
+  longitude={exhib.long}
+  latitude={exhib.lat}
+  >
+  <div>🐷</div>
+</Marker>
+))}  */}
+
+//  this.state.showPopup && <Popup
+// latitude={exhib.lat}
+// longitude={exhib.long}
+// closeButton={true}
+// closeOnClick={false}
+// onClose={() => this.setState({ showPopup: false })}
+// anchor="top" >
+// <div>🐳</div>
+// </Popup>
+
+{/* <Popup
+latitude={exhib.lat}
+longitude={exhib.long}
+closeButton={true}
+closeOnClick={false}
+onClose={() => this.setState({ showPopup: false })}
+anchor="top" >
+<div>hi</div>
+</Popup> */}
