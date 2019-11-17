@@ -9,17 +9,25 @@ class CardExhibitionsIndex extends React.Component {
 
 
     this.state = {
-      exhibitions: []
+      exhibitions: [],
+      search: ''
     }
+    this.handleChange = this.handleChange.bind(this)
+    this.filteredExhibitions = this.filteredExhibitions.bind(this)
 
   }
 
   componentDidMount(){
     const exhibId = this.props.match.params.id
     axios.get('/api/exhibitions')
-      .then(res => this.setState({ exhibitions: res.data }))
+      .then(res => {
+        this.setState({ exhibitions: res.data })
+        this.filteredExhibitions()
+      })
       .then(err => console.log(err))
   }
+
+  // CREATE FUNCTION THAT SPECIFIES IF FREE!
 
   // freeExhib(){
   //   if (this.state.exhibitions.rough_price === 0.00) {
@@ -27,11 +35,24 @@ class CardExhibitionsIndex extends React.Component {
   //   }
   // }
 
+  handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value })
+  }
+  
+  filteredExhibitions() {
+    const { exhibitions, search } = this.state
+    console.log(exhibitions, 'checking')
+    const re = new RegExp(search, 'i')
+    return exhibitions.filter((exhib) => {
+      return re.test(exhib.title)
+    })
+
+  }
 
 
   render () {
     if (!this.state.exhibitions) return null
-    console.log(this.state.exhibitions, 'state')
+    console.log(this.state, 'state')
     console.log(this.props.match, 'params')
     const exhibitions = this.state.exhibitions
     
@@ -43,13 +64,18 @@ class CardExhibitionsIndex extends React.Component {
             <input
               placeholder="Search"
               name="search"
+              onChange={this.handleChange}
             />
+            <a>
+              <div className="search-logo"></div>
+            </a>
             <button className="btn btn-primary">Search</button>
 
           </div>
         </div>   
         <div className="index-card-wrapper">
-          {exhibitions.map(exhib => (
+          {this.filteredExhibitions().map(exhib => (
+          
             <div key={exhib.id}>
               <div className="card">
                 <div className="card-image">

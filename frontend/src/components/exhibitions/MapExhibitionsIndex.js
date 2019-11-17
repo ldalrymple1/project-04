@@ -127,7 +127,7 @@ class MapExhibitionsIndex extends React.Component {
                   closeOnClick={false}
                   onClose={() => this.setState({ popupInfo: null })}
                 >
-                  <div>hi</div>
+                  <MapExhibInfo info={this.state.popupInfo} />
                 </Popup> 
               )}
             </Marker>

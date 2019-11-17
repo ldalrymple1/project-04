@@ -74,6 +74,7 @@ nav > a > p:hover {
 
 button.home {
   margin: 10px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .home-writing {
@@ -210,7 +211,7 @@ input.u-full-width.error {
 
 
 
-
+// CARD INDEX PAGE 
 
 
 h1.index-title {
@@ -241,6 +242,12 @@ h1.index-title {
   // }
 
 }
+
+.search-logo {
+  background-image: url('https://static.thenounproject.com/png/105498-200.png');
+  transform: scale(0.5);
+}
+
 
 
 .card {
