@@ -38,6 +38,8 @@ nav {
   
 
   
+
+  
 }
 
 nav > a > p {
@@ -46,7 +48,7 @@ nav > a > p {
   color: $pinkyorange;
 }
 
-nav > a > p:hover {
+nav > a:hover {
   border-top: #E83F6F;
   border-bottom: #E83F6F;
 }
@@ -243,12 +245,6 @@ h1.index-title {
 
 }
 
-.search-logo {
-  background-image: url('https://static.thenounproject.com/png/105498-200.png');
-  transform: scale(0.5);
-}
-
-
 
 .card {
   margin: 15px;
@@ -360,6 +356,40 @@ p.description {
 
   }
 
+
+
+}
+
+// EXHIBTION NEW
+
+.new-form-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+
+  form.new {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid black;
+    transform: scale(0.9);
+
+    .select {
+      margin: 15px;
+    }
+
+
+    .row.form {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    button.create-exhib {
+      margin-bottom: 10px;
+    }
+
+  }
 
 
 }

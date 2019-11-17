@@ -1,3 +1,4 @@
+// GENERAL 
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
@@ -7,6 +8,7 @@ import CardExhibitionsIndex from './components/exhibitions/CardExhibitionsIndex'
 import MapExhibitionsIndex from './components/exhibitions/MapExhibitionsIndex'
 import CalendarExhibitionsIndex from './components/exhibitions/CalendarExhibitionsIndex'
 import ExhibitionShow from './components/exhibitions/ExhibitionShow'
+import ExhibitionNew from './components/exhibitions/ExhibitionNew'
 
 // NEWS 
 import ArtNews from './components/news/ArtNews'
@@ -22,10 +24,9 @@ import Login from './components/auth/Login'
 import './style.scss'
 import 'spectre.css'
 
-
-
 const App = () => (
   <BrowserRouter>
+  
     <main>
       <nav>
         <Link to='/exhibitions'><p>IndexPage</p></Link>
@@ -35,6 +36,7 @@ const App = () => (
         <Link to='/'><p>HomePage</p></Link>
       </nav>
       <Switch>
+        <Route path='/exhibitions/new' component={ExhibitionNew} />
         <Route path='/exhibitions/:id' component={ExhibitionShow} />
         <Route path='/gallery-login' component={Login} />
         <Route path='/gallery-register' component={Register} />
@@ -47,15 +49,7 @@ const App = () => (
       </Switch>
     </main>
   
-  
-  
   </BrowserRouter>
-
-
-
-
-
-
 
 )
 
