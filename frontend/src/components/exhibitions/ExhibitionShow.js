@@ -33,13 +33,15 @@ class ExhibitionShow extends React.Component {
     const exhib = this.state.exhibition
     return (
       <div>
-        <h3>Show Page</h3>
         <div className="show-wrapper">
           <h2>{exhib.title}</h2>
           <img src={exhib.image} alt={exhib.title} />
-          <p>{exhib.start_date} - </p> <p>{exhib.end_date}</p>
+          <p>{exhib.start_date} - {exhib.end_date}</p>
           <p className="description">{exhib.description}</p>
-          <p>{exhib.rough_price}</p>
+          <p>£{exhib.rough_price}</p>
+          <div className="buzz-word">
+            <p className="category">Category Ex</p>
+          </div>
         </div>
       </div>
 

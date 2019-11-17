@@ -2,6 +2,11 @@
 
 
 @import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Oswald:300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond|Playfair+Display|Questrial&display=swap');
+
+$pinkyorange: #E83F6F;
+
+
 
 * {
   box-sizing: border-box;
@@ -38,7 +43,12 @@ nav {
 nav > a > p {
   text-decoration: none;
   margin: 5px 20px;
-  // color:  #E83F6F;
+  color: $pinkyorange;
+}
+
+nav > a > p:hover {
+  border-top: #E83F6F;
+  border-bottom: #E83F6F;
 }
 
 // HOME PAGE 
@@ -56,8 +66,9 @@ nav > a > p {
   font-family: 'Bebas Neue', cursive;
   text-align: center;
   font-size: 230px;
-  border-top: 2px solid red;
-  border-bottom: 2px solid red;
+  border-top: 2px solid #E83F6F;
+  border-bottom: 2px solid #E83F6F;
+
 
 }
 
@@ -65,33 +76,142 @@ button.home {
   margin: 10px;
 }
 
+.home-writing {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  letter-spacing: 3px;;
+
+}
+
+
 // REGISTER PAGE
+
+.register-title {
+  text-align: center;
+  margin-top: 25px;
+  font-family: 'Bebas Neue', cursive;
+  margin: 0;
+}
 
 .reg-form-wrapper {
   margin: auto;
   // background: red;
   display: flex;
   justify-content: center;
-  height: 90%;
+  height: 100%;
   align-items: center;
+  // background-image: url('https://45n0pr1wpm3ox9mbl3x0rhco-wpengine.netdna-ssl.com/wp-content/uploads/fly-images/44554/1-9999x700.jpg');
+  background-image: url('https://45n0pr1wpm3ox9mbl3x0rhco-wpengine.netdna-ssl.com/wp-content/uploads/fly-images/36649/E_2016_2000a-b-CROPPED-9999x700.jpg');
+  // background-image: url('https://www.airfrance.co.uk/GB/common/common/img/tbaf/news/NYC/que-voir-au-moma-de-new-york-en-ce-debut-d-annee/NYC-que-voir-au-moma-de-new-york-en-ce-debut-d-annee-2_1-1280x640.jpg');
 
   form {
     border: 1px solid black;
     padding: 20px;
-    height: 80%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    transform: scale(0.8);
+    background: white;
 
     .error {
       color: red;
   
     }
 
+    .row.form {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    
+
   }
 }
 
+form > a {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 0px;
+  padding: 0;
+}
+
+form > button {
+  margin: auto;
+  width: 150px;
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  margin: auto;
+
+}
 input.u-full-width.error {
   background-color:green;
   border: 1px solid red;
 }
+
+// LOGIN PAGE 
+
+
+.login-form-wrapper {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  // background-image: url('https://45n0pr1wpm3ox9mbl3x0rhco-wpengine.netdna-ssl.com/wp-content/uploads/fly-images/44554/1-9999x700.jpg');
+  background-image: url('https://45n0pr1wpm3ox9mbl3x0rhco-wpengine.netdna-ssl.com/wp-content/uploads/fly-images/36649/E_2016_2000a-b-CROPPED-9999x700.jpg');
+  // background-image: url('https://www.airfrance.co.uk/GB/common/common/img/tbaf/news/NYC/que-voir-au-moma-de-new-york-en-ce-debut-d-annee/NYC-que-voir-au-moma-de-new-york-en-ce-debut-d-annee-2_1-1280x640.jpg');
+
+
+  form {
+    border: 1px solid black;
+    background: white;
+    padding: 30px;
+    transform: scale(0.9);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+  }
+
+  .login-form-wrapper.form.button.login {
+    margin: auto;
+  }
+
+}
+
+.login {
+  margin:auto;
+}
+// form {
+//   border: 1px solid black;
+//   padding: 20px;
+//   height: 80%;
+//   width: 40%;
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
+  
+
+//   .error {
+//     color: red;
+
+//   }
+
+//   .row.form {
+//     margin: 0;
+//     display: flex;
+//     justify-content: center;
+//   }
+
+// }
+// }
+
+
+
+
+
 
 h1.index-title {
   font-family: 'Bebas Neue', cursive;
@@ -195,8 +315,6 @@ h1.index-title {
   width: 70%;
   font-family: 'Oswald', sans-serif;
 
-
-
 }
 
 .show-wrapper > img {
@@ -209,6 +327,20 @@ p.description {
   font-size: 20px;
 }
 
+.buzz-word {
+  background: rgb(255, 125, 64);
+  max-width: 120px;
+  max-height: 50px;
+  display: flex;
+  justify-content: center;
+  border-radius: 3px;;
+}
+
+.category {
+  padding: 10px;
+  font-size: 18px;
+}
+
 
 
 
@@ -216,8 +348,23 @@ p.description {
 
 .map-wrapper {
   display: flex;
-  // flex-direction: column;
+  flex-direction: column;
   justify-content: center;
+  margin: auto;
+  width: 80%;
+  padding-bottom: 80px;
+
+
+  .map-title > h1 {
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    font-size: 45px;
+    margin: 0;
+  }
+
+  .overlays {
+    margin: auto;
+  }
 
 }
 

@@ -40,10 +40,10 @@ class Login extends React.Component {
   render() {
     console.log(this.state)
     return (
-      <div className="reg-form-wrapper">
+      <div className="login-form-wrapper">
         
         <form onSubmit={this.handleSubmit}>
-          <h3>Login</h3>
+          <h3 className="register-title">Login</h3>
           <div className="row">
             <div className="twelve columns">
               <label>Email</label>
@@ -75,7 +75,7 @@ class Login extends React.Component {
             {this.state.error && <small className="error">{this.state.error}</small>}
           </div>
           
-          <button>Login</button>
+          <button className="login">Login</button>
         </form>  
       </div>
 

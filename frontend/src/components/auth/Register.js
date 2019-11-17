@@ -41,9 +41,9 @@ class Register extends React.Component {
       <div className="reg-form-wrapper">
         
         <form onSubmit={this.handleSubmit}>
-          <h3>Register</h3>
-          <div className="row">
-            <div className="twelve columns">
+          <h3 className="register-title">Register</h3>
+          <div className="row form">
+            <div className="eight columns">
               <label>Email</label>
               <input 
                 className="u-full-width"
@@ -55,8 +55,8 @@ class Register extends React.Component {
               </input>
             </div>
           </div>
-          <div className="row">
-            <div className="twelve columns">
+          <div className="row form">
+            <div className="eight columns">
               <label>Username</label>
               <input 
                 className="u-full-width" 
@@ -68,8 +68,8 @@ class Register extends React.Component {
               </input>
             </div>
           </div>
-          <div className="row">
-            <div className="twelve columns">
+          <div className="row form">
+            <div className="eight columns">
               <label>Password</label>
               <input 
                 className="u-full-width" 
@@ -81,8 +81,8 @@ class Register extends React.Component {
               </input>
             </div>
           </div>
-          <div className="row">
-            <div className="twelve columns">
+          <div className="row form">
+            <div className="eight columns">
               <label>Password Confirmation</label>
               <input 
                 className="u-full-width" 
@@ -94,7 +94,7 @@ class Register extends React.Component {
               </input>
             </div>
           </div>
-          <button>Register</button>
+          <button>Sign Up</button>
           <Link to='/gallery-login'><p>Already have an account?</p></Link>
         </form>  
       </div>

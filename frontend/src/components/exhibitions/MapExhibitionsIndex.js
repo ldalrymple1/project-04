@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import ReactMapGL, { Marker, GeolocateControl, Popup } from  'react-map-gl'
 import axios from 'axios'
 import 'mapbox-gl/dist/mapbox-gl.css'
+import CityPin from './CityPin'
+import MapExhibInfo from './MapExhibInfo'
 
 class MapExhibitionsIndex extends React.Component {
   constructor() {
@@ -17,8 +19,8 @@ class MapExhibitionsIndex extends React.Component {
         longitude: -0.105
       },
       exhibitions: [],
-      exhibPins: []
-      // popupInfo: null
+      exhibPins: [],
+      popupInfo: []
 
     
     } 
@@ -56,6 +58,26 @@ class MapExhibitionsIndex extends React.Component {
     
   }
 
+  _renderPopup() {
+    const { popupInfo } = this.state
+    const { exhibPins } = this.state
+
+    return (
+      popupInfo && (
+        <Popup
+          tipSize={5}
+          anchor="top"
+          longitude={exhibPins.long}
+          latitude={exhibPins.lat}
+          closeOnClick={false}
+          onClose={() => this.setState({ popupInfo: null })}
+        >
+          <MapExhibInfo info={popupInfo} />
+        </Popup>
+      )
+    )
+  }
+
 
 
   
@@ -68,31 +90,58 @@ class MapExhibitionsIndex extends React.Component {
   render() {
     if (!this.state.exhibPins) return null
     if (!this.state.exhibitions) return null
-    // console.log(this.state, 'state re render')
-    console.log(this.state, 'locations')
+    // if (!this.state.popupInfo) return null
+    console.log(this.state.popupInfo, 'pop up info')
+    console.log(this.state, 'state')
     return (
       <div className="map-wrapper">
-        <h1>map</h1>
+        <div className="map-title">
+          <h1>What's on near you?</h1>
+        </div>
         <ReactMapGL {...this.state.viewport}
           mapboxApiAccessToken={process.env.MAPBOX_ACCESS_TOKEN}
           mapStyle={`mapbox://styles/mapbox/streets-v9?access_token=${process.env.MAPBOX_ACCESS_TOKEN}`}
-          width={'90vw'}
-          height={'80vh'}
-          margin={'auto'}
+          position={'relative'}
+          width={'100%'}
+          height={'90vh'}
           onViewportChange={(viewport) => this.setState({ viewport })}>
           <GeolocateControl 
             positionOptions={{ enableHighAccuracy: true }}
             trackUserLocation={true}
           />  
           {this.state.exhibPins.map((exhib, i) => (
+
             <Marker
               key={i}           
               longitude={exhib.long}
               latitude={exhib.lat}
             >
-              <div>🎨</div>
               
+              <CityPin size={20} onClick={() => this.state.exhibitions.map((exhib) => (this.setState({ popupInfo: exhib.image })) )} />
+              {this.state.popupInfo && (
+                <Popup
+                  tipSize={5}
+                  anchor="top"
+                  longitude={exhib.long}
+                  latitude={exhib.lat}
+                  closeOnClick={false}
+                  onClose={() => this.setState({ popupInfo: null })}
+                >
+                  <div>hi</div>
+                </Popup> 
+              )}
             </Marker>
+            
+            
+            
+
+
+
+
+
+
+
+            
              
           ))} 
   
