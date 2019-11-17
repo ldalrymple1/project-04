@@ -8,8 +8,8 @@ class ExhibitionShow extends React.Component {
 
     this.state = {
       exhibition: [],
-      gallery: [],
-      categories: []
+      gallery: []
+      // categories: []
 
     }
   }
@@ -28,9 +28,11 @@ class ExhibitionShow extends React.Component {
 
   render() {
     if (!this.state.exhibition) return null
+    if (!this.state.exhibition.category) return null
     console.log(this.state.exhibition, 'the expo')
     console.log(this.state, 'state')
     const exhib = this.state.exhibition
+    console.log(this.state.exhibition.category, 'cats')
     return (
       <div>
         <div className="show-wrapper">
@@ -39,16 +41,20 @@ class ExhibitionShow extends React.Component {
           <p>{exhib.start_date} - {exhib.end_date}</p>
           <p className="description">{exhib.description}</p>
           <p>£{exhib.rough_price}</p>
-          <div className="buzz-word">
-            <p className="category">Category Ex</p>
+          <small>Categories</small>
+          <div className="buzzword-wrapper">
+            {exhib.category.map(cat => (
+              <div className="buzz-word" key={cat.id}>
+                <p className="category">{cat.category}</p>
+              </div>
+            ))}
           </div>
         </div>
+       
       </div>
 
 
-    
-      
-    
+
 
     )
   }

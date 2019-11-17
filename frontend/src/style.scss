@@ -334,19 +334,37 @@ p.description {
   font-size: 20px;
 }
 
-.buzz-word {
-  background: rgb(255, 125, 64);
-  max-width: 120px;
-  max-height: 50px;
+
+.buzzword-wrapper {
+
   display: flex;
-  justify-content: center;
-  border-radius: 3px;;
+  flex-direction: row;
+
+
+  .buzz-word {
+    background: rgb(255, 125, 64);
+    max-width: 160px;
+    max-height: 50px;
+    display: flex;
+    justify-content: center;
+    border-radius: 3px;
+    margin: 5px;
+  }
+  
+  .category {
+    padding: 10px;
+    font-size: 18px;
+    padding-left: 18px;
+    padding-right: 18px;
+    font-family: 'Bebas Neue', cursive;
+
+  }
+
+
+
 }
 
-.category {
-  padding: 10px;
-  font-size: 18px;
-}
+
 
 
 

@@ -8,6 +8,9 @@ import MapExhibitionsIndex from './components/exhibitions/MapExhibitionsIndex'
 import CalendarExhibitionsIndex from './components/exhibitions/CalendarExhibitionsIndex'
 import ExhibitionShow from './components/exhibitions/ExhibitionShow'
 
+// NEWS 
+import ArtNews from './components/news/ArtNews'
+
 // COMMON
 import Home from './components/common/Home'
 
@@ -26,8 +29,9 @@ const App = () => (
     <main>
       <nav>
         <Link to='/exhibitions'><p>IndexPage</p></Link>
-        <Link to='/exhibitions-calendar'><p>CalendarIndexPage</p></Link>
-        <Link to='/exhibitions-map'><p>MapIndexPage</p></Link>
+        <Link to='/exhibitions-calendar'><p>Calendar</p></Link>
+        <Link to='/exhibitions-map'><p>Map</p></Link>
+        <Link to='/art-news'><p>Art News</p></Link>
         <Link to='/'><p>HomePage</p></Link>
       </nav>
       <Switch>
@@ -37,6 +41,7 @@ const App = () => (
         <Route path='/exhibitions-calendar' component={CalendarExhibitionsIndex} />
         <Route path='/exhibitions-map' component={MapExhibitionsIndex} />
         <Route path='/exhibitions' component={CardExhibitionsIndex} />
+        <Route path='/art-news' component={ArtNews} />
         <Route exact path='/' component={Home} />
         <Route exact path='' component={Home} />
       </Switch>

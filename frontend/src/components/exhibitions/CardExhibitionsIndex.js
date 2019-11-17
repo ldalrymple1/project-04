@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import Select from 'react-select'
+
 
 
 class CardExhibitionsIndex extends React.Component {
@@ -10,9 +12,15 @@ class CardExhibitionsIndex extends React.Component {
 
     this.state = {
       exhibitions: [],
-      search: ''
+      search: '',
+      categories: [],
+      categoryChosen: ''
     }
+
+    
+
     this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
     this.filteredExhibitions = this.filteredExhibitions.bind(this)
 
   }
@@ -23,6 +31,7 @@ class CardExhibitionsIndex extends React.Component {
       .then(res => {
         this.setState({ exhibitions: res.data })
         this.filteredExhibitions()
+        this.getCategories()
       })
       .then(err => console.log(err))
   }
@@ -38,15 +47,28 @@ class CardExhibitionsIndex extends React.Component {
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value })
   }
+
+  getCategories(){
+    axios.get('/api/categories') 
+      .then(res => this.setState({ categories: res.data }))
+      .catch(err => console.log(err))
+    
+  }
   
   filteredExhibitions() {
     const { exhibitions, search } = this.state
     console.log(exhibitions, 'checking')
     const re = new RegExp(search, 'i')
     return exhibitions.filter((exhib) => {
-      return re.test(exhib.title)
+      return re.test(exhib.artist)  // or title
     })
+  }
 
+  handleSubmit(e) {
+    e.preventDefault()
+    if (this.state.categoryChosen === 'Pottery') {
+      console.log('pottery')
+    }
   }
 
 
@@ -54,7 +76,8 @@ class CardExhibitionsIndex extends React.Component {
     if (!this.state.exhibitions) return null
     console.log(this.state, 'state')
     console.log(this.props.match, 'params')
-    const exhibitions = this.state.exhibitions
+    const { exhibitions, categories } = this.state
+   
     
     return (
       <div>
@@ -72,7 +95,34 @@ class CardExhibitionsIndex extends React.Component {
             <button className="btn btn-primary">Search</button>
 
           </div>
-        </div>   
+        </div>
+        <form onSubmit={this.handleSubmit}>
+          <div className="field">
+            <label className="label">Pick a category</label>
+            <div className="select">
+              <select name="categoryChosen" onChange={this.handleChange} value={this.state.categoryChosen}>
+              
+                <option value="" disabled>Pick a category</option>
+                <option value="photography">Photography</option>
+                <option value="fine-art">Fine Art</option>
+                <option value="drawings">Drawings</option>
+                <option value="pottery">Pottery</option>
+                <option value="sculpture">Sculpture</option>
+                <option value="paintings">Paintings</option>
+                <option value="modern-art">Modern Art</option>
+                <option value="film">Film</option>
+                <option value="etchings">Etchings</option>
+                <option value="contemporary-art">Installations</option>
+                <option value="light" >Light</option>
+              
+              </select>
+            </div>
+          </div> 
+          <button>Search by category</button>
+
+
+        </form>
+  
         <div className="index-card-wrapper">
           {this.filteredExhibitions().map(exhib => (
           
