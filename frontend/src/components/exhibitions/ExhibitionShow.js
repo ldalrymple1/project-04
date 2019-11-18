@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 class ExhibitionShow extends React.Component {
   constructor() {
@@ -44,9 +45,11 @@ class ExhibitionShow extends React.Component {
           <small>Categories</small>
           <div className="buzzword-wrapper">
             {exhib.category.map(cat => (
-              <div className="buzz-word" key={cat.id}>
-                <p className="category">{cat.category}</p>
-              </div>
+              <Link to={`/categories/${cat.id}`} key={cat.id}>
+                <div className="buzz-word">
+                  <p className="category">{cat.category}</p>
+                </div>
+              </Link>
             ))}
           </div>
         </div>

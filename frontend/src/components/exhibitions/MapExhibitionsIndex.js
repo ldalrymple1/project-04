@@ -21,6 +21,7 @@ class MapExhibitionsIndex extends React.Component {
       exhibitions: [],
       exhibPins: [],
       popupInfo: []
+      
 
     
     } 
@@ -34,10 +35,32 @@ class MapExhibitionsIndex extends React.Component {
   //     .catch(err => console.log(err))
   // }
 
+  // populateMap() {
+  //   this.state.exhibitions.map((exhib) => {
+  //     axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${exhib.postcode.replace(' ','')}.json?access_token=${process.env.MAPBOX_ACCESS_TOKEN}`)
+  //       .then(res => {
+  //         const long = res.data.features[0].geometry.coordinates[0]
+  //         const lat = res.data.features[0].geometry.coordinates[1]
+  //         const _id = exhib._id
+  //         // exhib.lat = lat
+  //         // exhib.long = long
+  //         // return exhib
+  //         console.log(exhib.postcode)
+  //         this.setState({ exhibitions: [...this.state.exhibitions, { _id, long, lat }] })
+  //         console.log(this.state.exhibitions, 'checking')
+  //       })
+  //       .catch(err => console.log(err))
+
+  //   })
+   
+  // }
+
+
   populateMap() {
     this.state.exhibitions.map(exhib => {
       axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${exhib.postcode.replace(' ','')}.json?access_token=${process.env.MAPBOX_ACCESS_TOKEN}`)
         .then(res => {
+          console.log(res, 'the res')
           const long = res.data.features[0].geometry.coordinates[0]
           const lat = res.data.features[0].geometry.coordinates[1]
           const _id = exhib._id
@@ -47,36 +70,39 @@ class MapExhibitionsIndex extends React.Component {
         .catch(err => console.log(err))
 
     })
-   
   }
 
   componentDidMount() {
     axios.get('/api/exhibitions')
       .then(res => this.setState({ exhibitions: res.data }))
       .then(() => this.populateMap())
+      // .then(arr => {
+      //   this.setState({ exhibitions: arr })
+      //   console.log(this.state, '1')
+      // })
       .catch(err => console.log(err))
     
   }
 
-  _renderPopup() {
-    const { popupInfo } = this.state
-    const { exhibPins } = this.state
+  // _renderPopup() {
+  //   const { popupInfo } = this.state
+  //   const { exhibPins } = this.state
 
-    return (
-      popupInfo && (
-        <Popup
-          tipSize={5}
-          anchor="top"
-          longitude={exhibPins.long}
-          latitude={exhibPins.lat}
-          closeOnClick={false}
-          onClose={() => this.setState({ popupInfo: null })}
-        >
-          <MapExhibInfo info={popupInfo} />
-        </Popup>
-      )
-    )
-  }
+  //   return (
+  //     popupInfo && (
+  //       <Popup
+  //         tipSize={5}
+  //         anchor="top"
+  //         longitude={exhibPins.long}
+  //         latitude={exhibPins.lat}
+  //         closeOnClick={false}
+  //         onClose={() => this.setState({ popupInfo: null })}
+  //       >
+  //         <MapExhibInfo info={popupInfo} />
+  //       </Popup>
+  //     )
+  //   )
+  // }
 
 
 
@@ -88,10 +114,9 @@ class MapExhibitionsIndex extends React.Component {
   // .then(res => this.setState({ bikepoints: res.data }))
 
   render() {
-    if (!this.state.exhibPins) return null
-    if (!this.state.exhibitions) return null
-    // if (!this.state.popupInfo) return null
-    console.log(this.state.popupInfo, 'pop up info')
+    // if (!this.state.exhibitions[10].lat) return null
+    // if (!this.state.exhibitions[10].lat) return null
+    if (!this.state.popupInfo) return null
     console.log(this.state, 'state')
     return (
       <div className="map-wrapper">
@@ -108,43 +133,28 @@ class MapExhibitionsIndex extends React.Component {
           <GeolocateControl 
             positionOptions={{ enableHighAccuracy: true }}
             trackUserLocation={true}
-          />  
-          {this.state.exhibPins.map((exhib, i) => (
+          />
 
+          {this.state.exhibPins.map((exhib, i) => (
             <Marker
               key={i}           
               longitude={exhib.long}
               latitude={exhib.lat}
             >
+              <CityPin size={20} onClick={() => this.setState({ popupInfo: true })}/>
               
-              <CityPin size={20} onClick={() => this.state.exhibitions.map((exhib) => (this.setState({ popupInfo: exhib.image })) )} />
               {this.state.popupInfo && (
                 <Popup
-                  tipSize={5}
-                  anchor="top"
-                  longitude={exhib.long}
-                  latitude={exhib.lat}
-                  closeOnClick={false}
-                  onClose={() => this.setState({ popupInfo: null })}
+                  longitude={-0.0993992}
+                  latitude={51.5076169}
                 >
-                  <MapExhibInfo info={this.state.popupInfo} />
+                  <MapExhibInfo info={ this.state.exhibitions[i] } />
                 </Popup> 
               )}
             </Marker>
-            
-            
-            
-
-
-
-
-
-
-
-            
-             
           ))} 
-  
+
+          
         </ReactMapGL>
 
 
@@ -184,3 +194,10 @@ onClose={() => this.setState({ showPopup: false })}
 anchor="top" >
 <div>hi</div>
 </Popup> */}
+
+// closeButton={true}
+// closeOnClick={true}
+// onClose={() => this.setState({ popupInfo: false })}
+// tipSize={10}
+// anchor="top"
+// offset={20}

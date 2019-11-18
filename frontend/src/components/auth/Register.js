@@ -13,7 +13,7 @@ class Register extends React.Component {
         email: '',
         username: '',
         password: '',
-        passwordConfirmation: ''
+        password_confirmation: ''
       }
 
     }
@@ -88,7 +88,7 @@ class Register extends React.Component {
                 className="u-full-width" 
                 type="password" 
                 placeholder="Password Confirmation"
-                name="passwordConfirmation"
+                name="password_confirmation"
                 onChange={this.handleChange} 
               >   
               </input>

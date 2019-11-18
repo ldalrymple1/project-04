@@ -10,6 +10,9 @@ import CalendarExhibitionsIndex from './components/exhibitions/CalendarExhibitio
 import ExhibitionShow from './components/exhibitions/ExhibitionShow'
 import ExhibitionNew from './components/exhibitions/ExhibitionNew'
 
+// CATEGORIES
+import CategoryShow from './components/categories/CategoryShow'
+
 // NEWS 
 import ArtNews from './components/news/ArtNews'
 
@@ -26,7 +29,7 @@ import 'spectre.css'
 
 const App = () => (
   <BrowserRouter>
-  
+
     <main>
       <nav>
         <Link to='/exhibitions'><p>IndexPage</p></Link>
@@ -36,6 +39,7 @@ const App = () => (
         <Link to='/'><p>HomePage</p></Link>
       </nav>
       <Switch>
+        <Route path='/categories/:id' component={CategoryShow} />
         <Route path='/exhibitions/new' component={ExhibitionNew} />
         <Route path='/exhibitions/:id' component={ExhibitionShow} />
         <Route path='/gallery-login' component={Login} />

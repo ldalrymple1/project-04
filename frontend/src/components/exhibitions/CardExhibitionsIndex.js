@@ -14,7 +14,7 @@ class CardExhibitionsIndex extends React.Component {
       exhibitions: [],
       search: '',
       categories: [],
-      categoryChosen: ''
+      categoryChosen: 'All'
     }
 
     
@@ -57,17 +57,22 @@ class CardExhibitionsIndex extends React.Component {
   
   filteredExhibitions() {
     const { exhibitions, search } = this.state
-    console.log(exhibitions, 'checking')
     const re = new RegExp(search, 'i')
-    return exhibitions.filter((exhib) => {
-      return re.test(exhib.artist)  // or title
+    const filteredExhibitionsArr =  exhibitions.filter((exhib) => {
+      console.log(this.state.categoryChosen, 'chosen')
+      // return re.test(exhib.artist) && exhib.category.some(cat => cat.category === this.state.categoryChosen)
+      return (re.test(exhib.artist) && exhib.category.find(cat => cat.category === this.state.categoryChosen)) || this.state.categoryChosen === 'All'
     })
+    console.log('filtered', filteredExhibitionsArr)
+    return filteredExhibitionsArr
   }
+
+  
 
   handleSubmit(e) {
     e.preventDefault()
     if (this.state.categoryChosen === 'Pottery') {
-      console.log('pottery')
+      // console.log('pottery')
     }
   }
 
@@ -75,53 +80,72 @@ class CardExhibitionsIndex extends React.Component {
   render () {
     if (!this.state.exhibitions) return null
     console.log(this.state, 'state')
-    console.log(this.props.match, 'params')
+    // console.log(this.state.categoryChosen, 'chosen cat')
     const { exhibitions, categories } = this.state
    
     
     return (
       <div>
         <h1 className="index-title">Exposure</h1>
-        <div className="row searchbar">
-          <div className="twelve columns search-field">
-            <input
-              placeholder="Search"
-              name="search"
-              onChange={this.handleChange}
-            />
-            <a>
-              <div className="search-logo"></div>
-            </a>
-            <button className="btn btn-primary">Search</button>
-
-          </div>
-        </div>
-        <form onSubmit={this.handleSubmit}>
-          <div className="field">
+        <div className="search-area">
+          <div className="row searchbar">
+            
             <label className="label">Pick a category</label>
             <div className="select">
-              <select name="categoryChosen" onChange={this.handleChange} value={this.state.categoryChosen}>
+              <select className="four columns" name="categoryChosen" onChange={this.handleChange}>
               
                 <option value="" disabled>Pick a category</option>
-                <option value="photography">Photography</option>
-                <option value="fine-art">Fine Art</option>
-                <option value="drawings">Drawings</option>
-                <option value="pottery">Pottery</option>
-                <option value="sculpture">Sculpture</option>
-                <option value="paintings">Paintings</option>
-                <option value="modern-art">Modern Art</option>
-                <option value="film">Film</option>
-                <option value="etchings">Etchings</option>
-                <option value="contemporary-art">Installations</option>
-                <option value="light" >Light</option>
+                <option value="All">All</option>
+                <option value="Photography">Photography</option>
+                <option value="Fine Art">Fine Art</option>
+                <option value="Drawings">Drawings</option>
+                <option value="Pottery">Pottery</option>
+                <option value="Sculpture">Sculpture</option>
+                <option value="Paintings">Paintings</option>
+                <option value="Modern Art">Modern Art</option>
+                <option value="Film">Film</option>
+                <option value="Etchings">Etchings</option>
+                <option value="Contemporary Art">Installations</option>
+                <option value="Light" >Light</option>
               
               </select>
             </div>
-          </div> 
-          <button>Search by category</button>
+            
+            <div className="search-field">
+              <input
+                className="six columns"
+                placeholder="Search"
+                name="search"
+                onChange={this.handleChange}
+              />
+              <a>
+                <div className="search-logo"></div>
+              </a>
+              <button className="btn btn-primary">Search</button>
+
+            </div>
+          </div>
 
 
-        </form>
+
+
+
+        </div>
+
+       
+         
+
+
+
+
+
+        
+        
+        
+
+
+
+        
   
         <div className="index-card-wrapper">
           {this.filteredExhibitions().map(exhib => (
