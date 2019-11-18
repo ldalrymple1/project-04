@@ -35,16 +35,26 @@ nav {
   align-items: center;
   font-family: 'Bebas Neue', cursive;
   font-size: 22px;
-  
+  background: rgb(41, 8, 148);
 
-  
+  nav.left {
+    // background: yellow;;
+    display: flex;
+    justify-content: flex-start;
+  }
 
   
 }
 
-nav > a > p {
+nav > a > .nav-item {
   text-decoration: none;
   margin: 5px 20px;
+  color: $pinkyorange;
+}
+
+nav > a > p {
+  text-decoration: none;
+  margin: 5px 18px;
   color: $pinkyorange;
 }
 
@@ -292,12 +302,36 @@ h1.index-title {
 
 
 
-.twelve.columns.search-field > input {
+.search-field > input {
   // display:flex;
   // justify-content: center;
   width: 60%;
   margin-right: 10px;
   margin-left: 200px;
+  height: 30px;
+}
+
+input.six.columns {
+  margin-left: 80px;;
+}
+
+.form-group {
+  width:50%;
+}
+
+select.four.columns {
+  margin-left: 50px;
+  width:50%;
+}
+
+
+select.form-select.option {
+  font-size: 20px;;
+}
+
+.row.searchbar {
+  display: flex;
+  flex-direction: row;
 }
 
 // .row.searchbar {
@@ -308,6 +342,54 @@ h1.index-title {
 .twelve.columns.search-field {
   display: flex;
   flex-direction: row;
+}
+
+.search-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  // background: blue;
+  margin:auto;
+  width:60%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  // background: yellow;
+  align-items: center;
+  // margin-left: 80px;;
+  width: 50%;
+}
+
+.search-div {
+  width: 60%;
+  margin: 20px;
+  margin-top: 28px;
+  // background: green;
+  display: flex;
+  justify-content: flex-start;
+
+  
+  
+}
+
+.search-div > input {
+  width: 80%;
+  margin-right: 5px;
+  height:38px;
+  margin-top: 3px;
+}
+
+select.form-select {
+  height: 38px;
+  font-size: 16px;
+  margin-top: 14px;
+  width: 90%;
+}
+
+.form-group > p {
+  margin-top: 30px;
 }
 
 // EXHIBITION SHOW PAGE

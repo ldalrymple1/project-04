@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 import django.contrib.auth.password_validation as validations
 from django.contrib.auth.hashers import make_password
 from django.core.exceptions import ValidationError
-
+   
 
 class UserSerializer(serializers.ModelSerializer):
 

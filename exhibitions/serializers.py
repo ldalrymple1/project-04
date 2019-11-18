@@ -40,8 +40,8 @@ class GallerySerializer(serializers.ModelSerializer):
 
 class ExhibitionSerializer(serializers.ModelSerializer):
 
-    gallery = NestedGallerySerializer()
-    category = NestedCategorySerializer(many=True)
+    gallery = NestedGallerySerializer() #read_only=True
+    category = NestedCategorySerializer(many=True) #read_only=True
 
     def create(self, data):
         gallery_data = data.pop('gallery')

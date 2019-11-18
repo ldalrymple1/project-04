@@ -3,12 +3,17 @@ class Auth {
     localStorage.setItem('token', token)
   }
 
+  // static setName(name) {
+  //   localStorage.setItem('name', name)
+  // }
+
   static getToken() {
     return localStorage.getItem('token')
   }
 
   static logout() {
-    localStorage.removeItaem('token')
+    localStorage.removeItem('token')
+    // localStorage.removeItem('name')
   }
 
   static getPayload() {
@@ -26,6 +31,8 @@ class Auth {
     const now = Math.round(Date.now() / 1000)
     return now < payload.exp //is right now less tahn the expiry time, true give access to site or false means youre not logged in/not valid
   }
+
+  
 
 }
 

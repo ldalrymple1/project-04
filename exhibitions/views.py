@@ -9,12 +9,12 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 # Create your views here.
 
 class ExhibitionListView(ListCreateAPIView):
-    permission_classes = (IsAuthenticatedOrReadOnly, )
+    # permission_classes = (IsAuthenticatedOrReadOnly, )
     queryset = Exhibition.objects.all()
     serializer_class = ExhibitionSerializer
 
 class ExhibitionDetailView(RetrieveUpdateDestroyAPIView):
-    permission_classes = (IsAuthenticatedOrReadOnly, )
+    # permission_classes = (IsAuthenticatedOrReadOnly, )
     queryset = Exhibition.objects.all()
     serializer_class = ExhibitionSerializer
 

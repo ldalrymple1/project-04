@@ -87,50 +87,59 @@ class CardExhibitionsIndex extends React.Component {
     return (
       <div>
         <h1 className="index-title">Exposure</h1>
-        <div className="search-area">
-          <div className="row searchbar">
-            
-            <label className="label">Pick a category</label>
-            <div className="select">
-              <select className="four columns" name="categoryChosen" onChange={this.handleChange}>
-              
-                <option value="" disabled>Pick a category</option>
-                <option value="All">All</option>
-                <option value="Photography">Photography</option>
-                <option value="Fine Art">Fine Art</option>
-                <option value="Drawings">Drawings</option>
-                <option value="Pottery">Pottery</option>
-                <option value="Sculpture">Sculpture</option>
-                <option value="Paintings">Paintings</option>
-                <option value="Modern Art">Modern Art</option>
-                <option value="Film">Film</option>
-                <option value="Etchings">Etchings</option>
-                <option value="Contemporary Art">Installations</option>
-                <option value="Light" >Light</option>
-              
-              </select>
-            </div>
-            
-            <div className="search-field">
-              <input
-                className="six columns"
-                placeholder="Search"
-                name="search"
-                onChange={this.handleChange}
-              />
-              <a>
-                <div className="search-logo"></div>
-              </a>
-              <button className="btn btn-primary">Search</button>
+   
 
-            </div>
+        <div className="search-wrapper">
+
+          <div className="form-group">
+            <p>Pick a category</p>
+            <select className="form-select" name="categoryChosen" onChange={this.handleChange} >
+              <option value="" disabled>Pick a category</option>
+              <option value="All">All</option>
+              <option value="Photography">Photography</option>
+              <option value="Fine Art">Fine Art</option>
+              <option value="Drawings">Drawings</option>
+              <option value="Pottery">Pottery</option>
+              <option value="Sculpture">Sculpture</option>
+              <option value="Paintings">Paintings</option>
+              <option value="Modern Art">Modern Art</option>
+              <option value="Film">Film</option>
+              <option value="Etchings">Etchings</option>
+              <option value="Contemporary Art">Installations</option>
+              <option value="Light" >Light</option>
+            </select>
+          </div>
+            
+
+          <div className="search-div">
+            <input
+              className="field"
+              placeholder="Search"
+              name="search"
+              onChange={this.handleChange}
+            />
+            <button className="btn btn-primary">Search</button>
           </div>
 
 
 
 
 
+
+
+
         </div>
+       
+        
+
+            
+        
+
+
+
+
+
+        
 
        
          
@@ -161,6 +170,7 @@ class CardExhibitionsIndex extends React.Component {
                 </div>
                 <div className="card-body">
                   <small>{exhib.start_date} - {exhib.end_date}</small>
+                  
                   <p>Roughly £{exhib.rough_price}</p>
                 </div>
                 <div className="card-footer">

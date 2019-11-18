@@ -18,6 +18,7 @@ import ArtNews from './components/news/ArtNews'
 
 // COMMON
 import Home from './components/common/Home'
+import Navbar from './components/common/Navbar'
 
 // AUTH
 import Register from './components/auth/Register'
@@ -31,13 +32,7 @@ const App = () => (
   <BrowserRouter>
 
     <main>
-      <nav>
-        <Link to='/exhibitions'><p>IndexPage</p></Link>
-        <Link to='/exhibitions-calendar'><p>Calendar</p></Link>
-        <Link to='/exhibitions-map'><p>Map</p></Link>
-        <Link to='/art-news'><p>Art News</p></Link>
-        <Link to='/'><p>HomePage</p></Link>
-      </nav>
+      <Navbar />
       <Switch>
         <Route path='/categories/:id' component={CategoryShow} />
         <Route path='/exhibitions/new' component={ExhibitionNew} />
