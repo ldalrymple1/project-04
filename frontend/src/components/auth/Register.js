@@ -32,7 +32,7 @@ class Register extends React.Component {
     e.preventDefault()
     axios.post('/api/register', this.state.data)
       .then(() => this.props.history.push('/gallery-login'))
-      .catch(err => console.log(err))
+      .catch(err => console.log(err.response.data))
   }
 
   render() {

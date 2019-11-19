@@ -14,7 +14,8 @@ class CardExhibitionsIndex extends React.Component {
       exhibitions: [],
       search: '',
       categories: [],
-      categoryChosen: 'All'
+      categoryChosen: 'All',
+      animateReady: null
     }
 
     
@@ -76,16 +77,20 @@ class CardExhibitionsIndex extends React.Component {
     }
   }
 
+ 
+
 
   render () {
     if (!this.state.exhibitions) return null
+    // if (!this.state.exhibitions.gallery) return null
     console.log(this.state, 'state')
+    console.log(this.state.exhibitions, 'exhibs')
     // console.log(this.state.categoryChosen, 'chosen cat')
     const { exhibitions, categories } = this.state
    
     
     return (
-      <div>
+      <div className="animated fadeInUp slow">
         <h1 className="index-title">Exposure</h1>
    
 
@@ -137,24 +142,6 @@ class CardExhibitionsIndex extends React.Component {
 
 
 
-
-
-        
-
-       
-         
-
-
-
-
-
-        
-        
-        
-
-
-
-        
   
         <div className="index-card-wrapper">
           {this.filteredExhibitions().map(exhib => (
@@ -170,8 +157,11 @@ class CardExhibitionsIndex extends React.Component {
                 </div>
                 <div className="card-body">
                   <small>{exhib.start_date} - {exhib.end_date}</small>
-                  
                   <p>Roughly £{exhib.rough_price}</p>
+                  <div className="location">
+                    <img className="locations-icon" src='https://cdn3.iconfinder.com/data/icons/unicons-vector-icons-pack/32/location-512.png' />
+                    <p>{exhib.gallery.name}</p>
+                  </div>
                 </div>
                 <div className="card-footer">
                   <button className="btn btn-primary">Find out more</button>
@@ -202,3 +192,9 @@ export default CardExhibitionsIndex
 
 <p>{exhib.category.map(cat => (
   cat.category))}</p> */}
+
+//   map(gal => (
+//     <div key={gal.id}>
+//       <p>{gal.name}</p>
+//     </div>))}
+// </div>

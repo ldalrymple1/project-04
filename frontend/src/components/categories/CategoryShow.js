@@ -81,6 +81,7 @@ class CategoryShow extends React.Component {
         </div>
         <div className="index-card-wrapper">
           {this.filteredExhibitions().map(exhib => (
+          
             <div key={exhib.id}>
               <div className="card">
                 <div className="card-image">
@@ -93,6 +94,10 @@ class CategoryShow extends React.Component {
                 <div className="card-body">
                   <small>{exhib.start_date} - {exhib.end_date}</small>
                   <p>Roughly £{exhib.rough_price}</p>
+                  <div className="location">
+                    <img className="locations-icon" src='https://cdn3.iconfinder.com/data/icons/unicons-vector-icons-pack/32/location-512.png' />
+                    <p>{exhib.gallery.name}</p>
+                  </div>
                 </div>
                 <div className="card-footer">
                   <button className="btn btn-primary">Find out more</button>
