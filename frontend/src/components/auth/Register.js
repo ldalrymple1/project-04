@@ -10,6 +10,7 @@ class Register extends React.Component {
 
     this.state = {
       data: {
+        gallery_name: '',
         email: '',
         username: '',
         password: '',
@@ -20,6 +21,7 @@ class Register extends React.Component {
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.sendGalleryData = this.sendGalleryData.bind(this)
   }
 
   handleChange({ target: { name, value } }) {
@@ -35,6 +37,18 @@ class Register extends React.Component {
       .catch(err => console.log(err.response.data))
   }
 
+  sendGalleryData(){
+    const gall = { 
+      name: this.state.data.gallery_name,
+      exhibitions: []
+    }
+    axios.post('/api/galleries', gall)
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
+  }
+
+  
+
   render() {
     console.log(this.state)
     return (
@@ -42,6 +56,20 @@ class Register extends React.Component {
         
         <form onSubmit={this.handleSubmit}>
           <h3 className="register-title">Register</h3>
+          <div className="row form">
+            <div className="eight columns">
+              <label>Gallery Name</label>
+              <input 
+                className="u-full-width" 
+                type="text" 
+                placeholder="Gallery Name"
+                name="gallery_name"
+                onChange={this.handleChange} 
+              >
+              </input>
+            </div>
+          </div>
+
           <div className="row form">
             <div className="eight columns">
               <label>Email</label>
@@ -94,7 +122,7 @@ class Register extends React.Component {
               </input>
             </div>
           </div>
-          <button>Sign Up</button>
+          <button onClick={this.sendGalleryData}>Sign Up</button>
           <Link to='/gallery-login'><p>Already have an account?</p></Link>
         </form>  
       </div>

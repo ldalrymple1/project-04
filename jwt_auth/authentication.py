@@ -1,9 +1,11 @@
 # pylint: disable=no-member, arguments-differ
 from rest_framework.authentication import BaseAuthentication
 from rest_framework.exceptions import PermissionDenied # exceptions is another word for errors
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.conf import settings
 import jwt
+User = get_user_model()
+
 
 
 class JWTAuthentication(BaseAuthentication):

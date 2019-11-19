@@ -145,8 +145,8 @@ class MapExhibitionsIndex extends React.Component {
               
               {this.state.popupInfo && (
                 <Popup
-                  longitude={-0.0993992}
-                  latitude={51.5076169}
+                  longitude={exhib.long}
+                  latitude={exhib.lat}
                 >
                   <MapExhibInfo info={ this.state.exhibitions[i] } />
                 </Popup> 

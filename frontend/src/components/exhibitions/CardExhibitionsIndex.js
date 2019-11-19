@@ -90,7 +90,7 @@ class CardExhibitionsIndex extends React.Component {
    
     
     return (
-      <div className="animated fadeInUp slow">
+      <div className="animated fadeInUp">
         <h1 className="index-title">Exposure</h1>
    
 
@@ -142,32 +142,33 @@ class CardExhibitionsIndex extends React.Component {
 
 
 
-  
+      
         <div className="index-card-wrapper">
           {this.filteredExhibitions().map(exhib => (
-          
-            <div key={exhib.id}>
-              <div className="card">
-                <div className="card-image">
-                  <img src={exhib.image} className="img-responsive " />
-                </div>
-                <div className="card-header">
-                  <Link to={`/exhibitions/${exhib.id}`}> <div className="card-title h5">{exhib.title}</div></Link>
-                  <div className="card-subtitle text-gray">{exhib.artist}</div>
-                </div>
-                <div className="card-body">
-                  <small>{exhib.start_date} - {exhib.end_date}</small>
-                  <p>Roughly £{exhib.rough_price}</p>
-                  <div className="location">
-                    <img className="locations-icon" src='https://cdn3.iconfinder.com/data/icons/unicons-vector-icons-pack/32/location-512.png' />
-                    <p>{exhib.gallery.name}</p>
+            <Link to={`/exhibitions/${exhib.id}`} key={exhib.id}>
+              <div >
+                <div className="card">
+                  <div className="card-image">
+                    <img src={exhib.image} className="img-responsive " />
+                  </div>
+                  <div className="card-header">
+                    <Link to={`/exhibitions/${exhib.id}`}> <div className="card-title h5">{exhib.title}</div></Link>
+                    <div className="card-subtitle text-gray">{exhib.artist}</div>
+                  </div>
+                  <div className="card-body">
+                    <small>{exhib.start_date} - {exhib.end_date}</small>
+                    <p>Roughly £{exhib.rough_price}</p>
+                    <div className="location">
+                      <img className="locations-icon" src='https://cdn3.iconfinder.com/data/icons/unicons-vector-icons-pack/32/location-512.png' />
+                      <p>{exhib.gallery.name}</p>
+                    </div>
+                  </div>
+                  <div className="card-footer">
+                    <button className="btn btn-primary">Find out more</button>
                   </div>
                 </div>
-                <div className="card-footer">
-                  <button className="btn btn-primary">Find out more</button>
-                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

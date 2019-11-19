@@ -37,7 +37,7 @@ class Navbar extends React.Component {
         </nav>
 
         <nav className="right">
-          <Link to='/exhibitions'><p>IndexPage</p></Link>
+          <Link to='/exhibitions'><p>What's on?</p></Link>
           <Link to='/exhibitions-calendar'><p>Calendar</p></Link>
           <Link to='/exhibitions-map'><p>Map</p></Link>
           <Link to='/art-news'><p>Art News</p></Link>

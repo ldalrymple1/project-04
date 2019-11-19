@@ -13,6 +13,9 @@ import ExhibitionNew from './components/exhibitions/ExhibitionNew'
 // CATEGORIES
 import CategoryShow from './components/categories/CategoryShow'
 
+// GALLERIES 
+import GalleryShow from './components/galleries/GalleryShow'
+
 // NEWS 
 import ArtNews from './components/news/ArtNews'
 
@@ -34,8 +37,9 @@ const App = () => (
     <main>
       <Navbar />
       <Switch>
-        <Route path='/categories/:id' component={CategoryShow} />
         <Route path='/exhibitions/new' component={ExhibitionNew} />
+        <Route path='/categories/:id' component={CategoryShow} />
+        <Route path='/galleries/:id' component={GalleryShow} />
         <Route path='/exhibitions/:id' component={ExhibitionShow} />
         <Route path='/gallery-login' component={Login} />
         <Route path='/gallery-register' component={Register} />

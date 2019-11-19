@@ -29,33 +29,33 @@ class ArtNews extends React.Component {
   render() {
     console.log(this.state, 'state')
     return (
-      <>
-     <h1 className="index-title">Art News</h1>
-      <div className="index-card-wrapper">
-        {this.state.articles.map((art, i) => (
+      <div className="animated fadeInUp">
+        <h1 className="index-title">Art News</h1>
+        <div className="index-card-wrapper">
+          {this.state.articles.map((art, i) => (
       
-          <div key={i}>
-            <div className="card">
-              <div className="card-image">
-                <img src={art.urlToImage} className="img-responsive " />
-              </div>
-              <div className="card-header">
-                <div className="card-title-news">{art.title}</div>
-                <div className="card-subtitle text-gray">{art.source.name}</div>
-              </div>
-              <div className="card-body">
-                <small>{art.publishedAt}</small>
-                <p className="news-description">{art.description}</p>
-              </div>
+            <div key={i}>
+              <div className="card">
+                <div className="card-image">
+                  <img src={art.urlToImage} className="img-responsive " />
+                </div>
+                <div className="card-header">
+                  <div className="card-title-news">{art.title}</div>
+                  <div className="card-subtitle text-gray">{art.source.name}</div>
+                </div>
+                <div className="card-body">
+                  <small>{art.publishedAt}</small>
+                  <p className="news-description">{art.description}</p>
+                </div>
               
-              <div className="card-footer">
-                <button className="btn btn-primary">Find out more</button>
+                <div className="card-footer">
+                  <button className="btn btn-primary">Find out more</button>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </>
     )
   }
 

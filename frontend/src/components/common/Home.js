@@ -12,7 +12,7 @@ class Home extends React.Component {
     return (
       <div className="home-wrapper">
         <h4 className="home-writing">DISCOVER ART  |     NEAR YOU</h4>
-        <h1 className="home-title">EXPOSURE</h1>
+        <h1 className="home-title animated  slow zoomIn ">EXPOSURE</h1>
         <h4 className="sub-writing">GET THE LATEST EXHIBITIONS IN LONDON</h4>
         <h4 className="sub-writing">SEARCH BY CATEGORY</h4>
         <h4 className="sub-writing">ALL THINGS ART</h4>
