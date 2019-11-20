@@ -20,15 +20,7 @@ class Navbar extends React.Component {
     this.props.history.push('/')
   }
 
-  static isAuthenticated() {
-    const payload = this.getPayload()
-    if (!payload) return false
-    const now = Math.round(Date.now() / 1000)
-    return now < payload.exp //is right now less tahn the expiry time, true give access to site or false means youre not logged in/not valid
-  }
-
   
-
 
 
   render() {
@@ -36,7 +28,7 @@ class Navbar extends React.Component {
       <nav>
 
         <nav className="left">
-          <Link to='exhibitions/new'><p>Add an exhibition?</p></Link>
+          <Link to='exhibitions/new'><i className="fas fa-plus"></i><span className="nav-plus">exhibition</span></Link>
           <Link to='/' onClick={this.logout}><div className='nav-item'>Logout</div></Link>
         </nav>
 

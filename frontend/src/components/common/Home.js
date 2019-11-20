@@ -15,7 +15,7 @@ class Home extends React.Component {
         <h1 className="home-title animated  slow zoomIn ">EXPOSURE</h1>
         <h4 className="sub-writing-big">GET THE LATEST EXHIBITIONS IN LONDON</h4>
         <h4 className="sub-writing">SEARCH BY CATEGORY <span className="line">| </span>ALL THINGS ART</h4>
-        <h4 className="gallery-q">Are you a Gallery?</h4>
+        <h4 className="gallery-q">Are you a Gallerist?</h4>
         <span> <Link to='/gallery-register'><button className="btn home">YES</button></Link><Link to='/exhibitions'><button className="btn home">NO</button></Link> </span> 
 
 

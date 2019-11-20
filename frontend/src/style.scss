@@ -63,7 +63,7 @@ nav > a > p {
 }
 
 .fa-home {
-  color: $pinkyorange;
+  color: black;
   margin-right: 28px;
   margin-left: 15px;;
 }
@@ -71,6 +71,13 @@ nav > a > p {
 nav > a:hover {
   transition: all .2s ease-in-out;
   color: black;
+}
+
+.fa-plus {
+  color: $pinkyorange;
+  margin-left: 25px;
+  margin-right: 8px;
+  height: 5px;
 }
 
 
@@ -81,6 +88,10 @@ nav > a:hover {
   border-bottom: $pinkyorange;
   transform: scale(1.09);
   color: black;
+}
+
+.nav-plus {
+  color: $pinkyorange;
 }
 
 // HOME PAGE 
@@ -135,7 +146,7 @@ button.home {
 }
 
 .gallery-q {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Bebas Neue', cursive;
   font-size: 15px;
   letter-spacing: 1px;
   margin-top: 10px;;
