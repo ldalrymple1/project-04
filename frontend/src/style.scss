@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond|Playfair+Display|Questrial&display=swap');
 
 $pinkyorange: #E83F6F;
+$offwhite:  rgb(249, 244, 244);
 
 
 
@@ -188,14 +189,19 @@ input.u-full-width.error {
   justify-content: center;
   height: 100%;
   align-items: center;
-  // background-image: url('https://45n0pr1wpm3ox9mbl3x0rhco-wpengine.netdna-ssl.com/wp-content/uploads/fly-images/44554/1-9999x700.jpg');
-  background-image: url('https://45n0pr1wpm3ox9mbl3x0rhco-wpengine.netdna-ssl.com/wp-content/uploads/fly-images/36649/E_2016_2000a-b-CROPPED-9999x700.jpg');
+  // background-image: url('https://45n0pr1wpm3ox9mbl3x0rhco-wpengine.netdna-ssl.com/wp-content/uploads/fly-images/36649/E_2016_2000a-b-CROPPED-9999x700.jpg'); // n0.1
   // background-image: url('https://www.airfrance.co.uk/GB/common/common/img/tbaf/news/NYC/que-voir-au-moma-de-new-york-en-ce-debut-d-annee/NYC-que-voir-au-moma-de-new-york-en-ce-debut-d-annee-2_1-1280x640.jpg');
+  // background-image: url(http://s3-us-west-2.amazonaws.com/vagallery/wp-content/uploads/2019/06/13200435/NEWBUILDING-07-1024px.jpg);
+  background-image: url('https://pbs.twimg.com/media/Dndr-A_X4AA1Aw2.jpg'); // LOGIN
+  // background-image: url('https://cdn.wallpaper.com/main/2019/09/00_tai-shani-dc-semiramis-2019-installation-turner-prize-2019-at-turner-contemporary.-photo-by-david-levene-1.gif'); // no 3
+  // background-image: url('https://img.theculturetrip.com/wp-content/uploads/2019/08/galeria.jpg'); // no 2.
 
+  background-size: cover;
+  background-repeat: no-repeat;
 
   form {
     border: 1px solid black;
-    background: white;
+    background: $offwhite;
     padding: 30px;
     transform: scale(0.9);
     display: flex;
@@ -614,6 +620,10 @@ p.date {
   display: flex;
   justify-content: center;
   width: 100vw;
+  background-image: url('https://anotherimg-dazedgroup.netdna-ssl.com/1564/azure/another-prod/290/9/299434.jpg');
+  // background-image: url('https://i2.wp.com/luxebeatmag.com/wp-content/uploads/2014/04/hi-res-matisse-horse.jpg?fit=3000%2C1968&ssl=1');
+  // background-image: url('https://live.staticflickr.com/5156/5906848153_363645d12d_b.jpg');
+  background-size: cover;
 
   form.new {
     display: flex;
@@ -622,6 +632,7 @@ p.date {
     border: 1px solid black;
     transform: scale(0.9);
     height: 800px;
+    background: $offwhite;
 
     .select {
       margin: 15px;
