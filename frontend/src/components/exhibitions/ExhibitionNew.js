@@ -144,9 +144,9 @@ class ExhibitionNew extends React.Component {
     console.log(this.state, 'STATE')
     return (
       <>
-      <h3 className="register-title">Add an Exhibition</h3>
       <div className="new-form-wrapper">
         <form onSubmit={this.handleSubmit} className="new">
+          <h3 className="register-title">Add an Exhibition</h3>
           <div className="row form">
             <div className="ten columns">
               <label>Title of the Exhibition</label>

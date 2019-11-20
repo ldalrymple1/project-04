@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 
 class ArtNews extends React.Component {
@@ -49,7 +50,7 @@ class ArtNews extends React.Component {
                 </div>
               
                 <div className="card-footer">
-                  <button className="btn btn-primary">Find out more</button>
+                  <Link to={art.url}><button className="btn btn-primary">Find out more</button></Link>
                 </div>
               </div>
             </div>

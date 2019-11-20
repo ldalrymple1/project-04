@@ -6,6 +6,7 @@
 
 $pinkyorange: #E83F6F;
 $offwhite:  rgb(249, 244, 244);
+$transpinkyorange: rgba(232, 63, 111, 0.575);
 
 
 
@@ -35,7 +36,7 @@ nav {
   // background: chartreuse;
   align-items: center;
   font-family: 'Bebas Neue', cursive;
-  font-size: 22px;
+  font-size: 23px;
   // background: rgb(41, 8, 148);
 
   nav.left {
@@ -57,11 +58,29 @@ nav > a > p {
   text-decoration: none;
   margin: 5px 15px;
   color: $pinkyorange;
+  
+  
+}
+
+.fa-home {
+  color: $pinkyorange;
+  margin-right: 28px;
+  margin-left: 15px;;
 }
 
 nav > a:hover {
+  transition: all .2s ease-in-out;
+  color: black;
+}
+
+
+nav > a:hover {
   border-top: #E83F6F;
-  border-bottom: #E83F6F;
+  border-bottom: 2px solid #E83F6F;
+  text-decoration: none;
+  border-bottom: $pinkyorange;
+  transform: scale(1.09);
+  color: black;
 }
 
 // HOME PAGE 
@@ -88,6 +107,11 @@ nav > a:hover {
 button.home {
   margin: 5px;
   font-family: 'Oswald', sans-serif;
+  font-size: 13px;;
+  height: 30px;
+  width: 70px;
+  color: $pinkyorange;
+  border: 0.5px solid black;
   
 }
 
@@ -104,12 +128,23 @@ button.home {
   letter-spacing: 2px;
 }
 
+.sub-writing-big {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  letter-spacing: 4px;
+}
+
 .gallery-q {
   font-family: 'Playfair Display', serif;
   font-size: 15px;
   letter-spacing: 1px;
   margin-top: 10px;;
 
+}
+
+.line {
+  color: $pinkyorange;
+  font-weight: 800;
 }
 
 
@@ -130,13 +165,14 @@ button.home {
   height: 100%;
   align-items: center;
   // background-image: url('https://45n0pr1wpm3ox9mbl3x0rhco-wpengine.netdna-ssl.com/wp-content/uploads/fly-images/44554/1-9999x700.jpg');
-  background-image: url('https://45n0pr1wpm3ox9mbl3x0rhco-wpengine.netdna-ssl.com/wp-content/uploads/fly-images/36649/E_2016_2000a-b-CROPPED-9999x700.jpg');
+  background-image: url('https://cdn.wallpaper.com/main/2019/09/00_tai-shani-dc-semiramis-2019-installation-turner-prize-2019-at-turner-contemporary.-photo-by-david-levene-1.gif');
+  background-size: cover;
   // background-image: url('https://www.airfrance.co.uk/GB/common/common/img/tbaf/news/NYC/que-voir-au-moma-de-new-york-en-ce-debut-d-annee/NYC-que-voir-au-moma-de-new-york-en-ce-debut-d-annee-2_1-1280x640.jpg');
 
   form {
     border: 1px solid black;
     padding: 20px;
-    height: 90%;
+    height: 85%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -253,6 +289,9 @@ input.u-full-width.error {
 h1.index-title {
   font-family: 'Bebas Neue', cursive;
   text-align: center;
+  letter-spacing: 4px;
+  margin-top: 20px;;
+  margin-bottom: 0px;;
 }
 
 h2.index-title {
@@ -349,7 +388,7 @@ h2.index-title {
   // padding: 10px;
   height: 30px;
   border:  #E83F6F;
-  margin-top: 10px;
+  margin-top: 7px;
   background: #E83F6F;
 
 }
@@ -405,7 +444,7 @@ select.form-select.option {
   justify-content: center;
   // background: blue;
   margin:auto;
-  width:60%;
+  width:75%;
 }
 
 .form-group {
@@ -414,7 +453,7 @@ select.form-select.option {
   // background: yellow;
   align-items: center;
   // margin-left: 80px;;
-  width: 50%;
+  width: 40%;
 }
 
 .search-div {
@@ -444,7 +483,11 @@ select.form-select {
 }
 
 .form-group > p {
-  margin-top: 30px;
+  margin-top: 22px;
+  font-family: 'Oswald', sans-serif;
+  width: 50%;
+  font-size: 20px;
+  letter-spacing: 0.5px;;
 }
 
 .fadeInUp {
@@ -452,6 +495,10 @@ select.form-select {
   animation-name: fadeInUp;
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
+}
+
+.form-group {
+  width: 400px;
 }
 
 
@@ -526,14 +573,22 @@ select.form-select {
   font-size: 20px;
   padding: 3px;
   transition: all .2s ease-in-out;
-  text-decoration: none !important;
 
 
 }
 
-.buzz-word > h4:hover {
+
+
+.list-of-galls2 > a:hover{
+  text-decoration: none;
+  
+}
+
+.buzz-gallery > h4:hover {
   background: $pinkyorange;
   transform: scale(1.1);
+  text-decoration: none;
+  
   
 }
 
@@ -621,8 +676,9 @@ p.date {
   justify-content: center;
   width: 100vw;
   background-image: url('https://anotherimg-dazedgroup.netdna-ssl.com/1564/azure/another-prod/290/9/299434.jpg');
-  // background-image: url('https://i2.wp.com/luxebeatmag.com/wp-content/uploads/2014/04/hi-res-matisse-horse.jpg?fit=3000%2C1968&ssl=1');
-  // background-image: url('https://live.staticflickr.com/5156/5906848153_363645d12d_b.jpg');
+  
+  background-image: url('https://cdn.wallpaper.com/main/2019/09/00_tai-shani-dc-semiramis-2019-installation-turner-prize-2019-at-turner-contemporary.-photo-by-david-levene-1.gif');
+  background-image: url('https://45n0pr1wpm3ox9mbl3x0rhco-wpengine.netdna-ssl.com/wp-content/uploads/fly-images/36649/E_2016_2000a-b-CROPPED-9999x700.jpg');
   background-size: cover;
 
   form.new {
@@ -631,7 +687,7 @@ p.date {
     flex-direction: column;
     border: 1px solid black;
     transform: scale(0.9);
-    height: 800px;
+    height: 850px;
     background: $offwhite;
 
     .select {
@@ -676,7 +732,7 @@ p.date {
   flex-direction: column;
   justify-content: center;
   margin: auto;
-  width: 80%;
+  width: 95%;
   padding-bottom: 80px;
 
 
@@ -691,6 +747,18 @@ p.date {
     margin: auto;
   }
 
+}
+
+.coloured-wrapper {
+  background: $transpinkyorange;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.mapboxgl-ctrl-group {
+  background: $pinkyorange;
 }
 
 // .overlays {

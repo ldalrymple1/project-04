@@ -123,39 +123,46 @@ class MapExhibitionsIndex extends React.Component {
         <div className="map-title">
           <h1>What's on near you?</h1>
         </div>
-        <ReactMapGL {...this.state.viewport}
-          mapboxApiAccessToken={process.env.MAPBOX_ACCESS_TOKEN}
-          mapStyle={`mapbox://styles/mapbox/streets-v9?access_token=${process.env.MAPBOX_ACCESS_TOKEN}`}
-          position={'relative'}
-          width={'100%'}
-          height={'90vh'}
-          onViewportChange={(viewport) => this.setState({ viewport })}>
-          <GeolocateControl 
-            positionOptions={{ enableHighAccuracy: true }}
-            trackUserLocation={true}
-          />
+        <div className="coloured-wrapper">
+          <ReactMapGL {...this.state.viewport}
+            mapboxApiAccessToken={process.env.MAPBOX_ACCESS_TOKEN}
+            mapStyle={`mapbox://styles/mapbox/streets-v9?access_token=${process.env.MAPBOX_ACCESS_TOKEN}`}
+            position={'relative'}
+            width={'90%'}
+            height={'80vh'}
+            margin={'auto'}
+            onViewportChange={(viewport) => this.setState({ viewport })}>
+            <GeolocateControl 
+              positionOptions={{ enableHighAccuracy: true }}
+              trackUserLocation={true}
+            />
 
-          {this.state.exhibPins.map((exhib, i) => (
-            <Marker
-              key={i}           
-              longitude={exhib.long}
-              latitude={exhib.lat}
-            >
-              <CityPin size={20} onClick={() => this.setState({ popupInfo: true })}/>
+            {this.state.exhibPins.map((exhib, i) => (
+              <Marker
+                key={i}           
+                longitude={exhib.long}
+                latitude={exhib.lat}
+              >
+                <CityPin size={15} onClick={() => this.setState({ popupInfo: true })}/>
               
-              {this.state.popupInfo && (
-                <Popup
-                  longitude={exhib.long}
-                  latitude={exhib.lat}
-                >
-                  <MapExhibInfo info={ this.state.exhibitions[i] } />
-                </Popup> 
-              )}
-            </Marker>
-          ))} 
+                {this.state.popupInfo && (
+                  <Popup
+                    longitude={exhib.long}
+                    latitude={exhib.lat}
+                  >
+                    <MapExhibInfo info={ this.state.exhibitions[i] } />
+                  </Popup> 
+                )}
+              </Marker>
+            ))} 
 
           
-        </ReactMapGL>
+          </ReactMapGL>
+
+
+
+        </div>
+ 
 
 
       </div>

@@ -84,6 +84,34 @@
   }
 },
 {
+  "model": "exhibitions.gallery",
+  "pk": 14,
+  "fields": {
+    "name": "National Portrait Gallery"
+  }
+},
+{
+  "model": "exhibitions.gallery",
+  "pk": 15,
+  "fields": {
+    "name": "The Photographers Gallery"
+  }
+},
+{
+  "model": "exhibitions.gallery",
+  "pk": 16,
+  "fields": {
+    "name": "Herald St"
+  }
+},
+{
+  "model": "exhibitions.gallery",
+  "pk": 17,
+  "fields": {
+    "name": "The British Museum"
+  }
+},
+{
   "model": "exhibitions.category",
   "pk": 1,
   "fields": {
@@ -175,6 +203,20 @@
   }
 },
 {
+  "model": "exhibitions.category",
+  "pk": 14,
+  "fields": {
+    "category": "Furniture"
+  }
+},
+{
+  "model": "exhibitions.category",
+  "pk": 15,
+  "fields": {
+    "category": "Rennaissance Art"
+  }
+},
+{
   "model": "exhibitions.exhibition",
   "pk": 1,
   "fields": {
@@ -202,7 +244,7 @@
     "artist": "Olafur Eliasson",
     "start_date": "2019-07-11",
     "end_date": "2020-01-05",
-    "image": "https://apollo.imgix.net/content/uploads/2019/08/Olafur-Eliasson-Your-uncertain-shadow-colour-2010.j",
+    "image": "https://live.staticflickr.com/1646/23809846489_1066be2ea7_b.jpg",
     "description": "In Eliasson\u2019s captivating installations you become aware of your senses, people around you and the world beyond.\r\n\r\nSome artworks introduce natural phenomena such as rainbows to the gallery space. Others use reflections and shadows to play with the way we perceive and interact with the world. Many works result from the artist\u2019s research into complex geometry, motion patterns, and his interest in colour theory. All but one of the works have never been seen in the UK before.\r\n\r\nWithin the exhibition is an area which explores Eliasson\u2019s deep engagement with society and the environment. Discover what an artist\u2019s perspective can bring to issues of climate change, energy, migration as well as architecture.\r\n\r\nThe kitchen team at Studio Olafur Eliasson have created a special menu and programme of related events for Tate Modern\u2019s Terrace Bar, based on the organic, vegetarian and locally sourced food served in his Berlin studio.\r\n\r\nEliasson has a long relationship with Tate Modern. His glowing sun, The weather project, drew more than two million people to the Turbine Hall in 2003. More recently Ice Watch 2018 brought chunks of ice from Greenland to London. This exhibition provides another unforgettable experience for visitors of all ages.",
     "rough_price_currency": "GBP",
     "rough_price": "15.00",
@@ -210,7 +252,9 @@
     "gallery": 1,
     "category": [
       1,
-      9
+      9,
+      12,
+      13
     ]
   }
 },
@@ -222,14 +266,16 @@
     "artist": "Bridget Riley",
     "start_date": "2019-10-23",
     "end_date": "2020-01-26",
-    "image": "https://www.itsnicethat.com/system/files/062015/5577fafd7e74a9263700120d/images_slice_large/8_Red-Wi",
+    "image": "https://images-e.jpimedia.uk/imagefetch/w_400,f_auto,ar_3:2,q_auto:low,c_fill/if_h_lte_200,c_mfit,h_201/https://www.scotsman.com/webimage/1.4954887.1563378497!/image/image.jpg",
     "description": "English painter Bridget Riley takes over the Hayward Gallery this winter, in a major retrospective of her decades-long career. The display brings together pieces including black-and-white optical illusion paintings from the 1960s and her well-known colour canvases that she describes as \u2018multifocal\u2019. You can also see some rarely-before-shown works from across Riley\u2019s career, including drawings and studies that have influenced her better-known pieces.",
     "rough_price_currency": "GBP",
     "rough_price": "17.00",
     "postcode": "SE1 8XX",
     "gallery": 2,
     "category": [
-      8
+      8,
+      9,
+      7
     ]
   }
 },
@@ -290,9 +336,9 @@
     "postcode": "W1J 0BD",
     "gallery": 6,
     "category": [
+      8,
       2,
-      7,
-      8
+      7
     ]
   }
 },
@@ -333,9 +379,9 @@
     "gallery": 8,
     "category": [
       1,
-      9,
       12,
-      13
+      13,
+      9
     ]
   }
 },
@@ -374,8 +420,8 @@
     "gallery": 10,
     "category": [
       1,
-      9,
-      12
+      12,
+      9
     ]
   }
 },
@@ -416,6 +462,194 @@
     "category": [
       10,
       12
+    ]
+  }
+},
+{
+  "model": "exhibitions.exhibition",
+  "pk": 19,
+  "fields": {
+    "title": "Feast for the Eyes",
+    "artist": "Many",
+    "start_date": "2019-10-10",
+    "end_date": "2020-02-12",
+    "image": "https://www.foam.org/userfiles/headers/museum/tentoonstellingen/peluqueria_limones_1979_c_ouka_leele_3000x1800.jpg",
+    "description": "Exploring the rich history of food photography through some of the leading figures and movements within the genre including: Nobuyoshi Araki, Nan Goldin, Martin Parr, Man Ray, Cindy Sherman, Wolfgang Tillmans and Weegee.\r\n\r\nEncompassing fine-art and vernacular photography, commercial and scientific images, photojournalism and fashion, the exhibition looks at the development of this form and the artistic, social and political contexts that have informed it.\r\n\r\nFood has always been a much-photographed and consumed subject, offering a test ground for artistic experimentation and a way for artists to hone their skills. But even the most representative images of food have rarely been straightforward or objective. Food as subject matter is rich in symbolic meaning and across the history of art, has operated as a vessel for artists to explore a particular emotion, viewpoint or theme and express a range of aspirations and social constructs. With the advent of social media, interest in food photography has become widespread with the taking and sharing of images becoming an integral part of the dining experience itself, used as instant signifiers of status and exacerbating a sense of belonging and difference.",
+    "rough_price_currency": "GBP",
+    "rough_price": "5.00",
+    "postcode": "W1F 7LW",
+    "gallery": 15,
+    "category": [
+      1,
+      9
+    ]
+  }
+},
+{
+  "model": "exhibitions.exhibition",
+  "pk": 20,
+  "fields": {
+    "title": "Return to the Real",
+    "artist": "Doug Aitken",
+    "start_date": "2019-10-02",
+    "end_date": "2019-12-20",
+    "image": "https://d3rtf5gv0re40d.cloudfront.net/anzax/17/17ac9342-7f9b-4dd6-8efa-0ff247f1d4fd_1500_938.jpg",
+    "description": "Victoria Miro presents Return to the Real, an exhibition of new works by Doug Aitken. Conceived as a unified composition of sound, light, form and movement, the exhibition explores our rapidly changing relationships to one another and the world around us in an age dominated by technology.\r\n\r\n'We are living in a new era, one of complete connectivity, where screen space has become seemingly equal to the physical landscape. This surreal shift in evolution brings us into uncharted waters, a new frontier, one for which we are not fully prepared. These artworks question how we navigate a world of increasing speed and transition, the direction of where we can go and how we can confront the future.'\u2013Doug Aitken\r\n\r\nA starting point for this exhibition is the idea of the contemporary individual and the ways in which humans are continuously both in and out of sync. Diametrically opposed notions of connectivity and freedom, collectivity and isolation are highlighted, reminding us how this new frontier is being shaped and is transforming our lives in real time and, in many ways, defining our generation. The exhibition creates a fragmented narrative of today's unprecedented digital landscape, in which artworks function like signposts, inviting the viewer to pause, stop and evaluate their surroundings.",
+    "rough_price_currency": "GBP",
+    "rough_price": "10.00",
+    "postcode": "N1 7RW",
+    "gallery": 3,
+    "category": [
+      9,
+      10,
+      12,
+      13
+    ]
+  }
+},
+{
+  "model": "exhibitions.exhibition",
+  "pk": 21,
+  "fields": {
+    "title": "Trix and Robert Haussmann",
+    "artist": "T & R  Haussmann",
+    "start_date": "2019-10-16",
+    "end_date": "2019-12-30",
+    "image": "https://d3rtf5gv0re40d.cloudfront.net/anzax/4b/4bd976ec-ff50-4e25-8496-0ed3ed0ad91f_1500_938.jpg",
+    "description": "Trix + Robert Haussmann have staged an illusory installation within the gallery. It's sudden and sharp, straight lines that draw a boundary, and yet the space within is opened up and reflected back in a kind of warped perception. In homage to Gerrit Rietveld, designer of the iconic Red and Blue Chair in 1917, the armchair has been stripped back to its essential shapes and primary colours. Yet, in a move infused with typical irony, the Haussmanns have overturned the Bauhaus's gospel 'form follows function'. This is furniture, but its use is in its reference points, touchstones throughout art and design history, blown up and exaggerated to almost humorous, swollen proportions.\r\n\r\nThe wife-and-husband duo have worked for two years on their exhibition at Herald St, their first solo show in London. The new work continues their longstanding subversion of historical design ideals, from 16th-century ostentatious Mannerism to the extreme simplification of early 20th-century Modernism. On the one hand, anything unnecessary has been removed in a bid for total rationalisation; on the other hand, the chairs are plump and sleek, implying plush luxury. They call this oxymoron 'lush sparseness': an acknowledgement of the angular proportions of their teacfhers (some of whom were directly involved in the Bauhaus and De Stijl movements), reinterpreted as illusion.",
+    "rough_price_currency": "GBP",
+    "rough_price": "12.00",
+    "postcode": "E2 6JT",
+    "gallery": 16,
+    "category": [
+      9,
+      12,
+      14
+    ]
+  }
+},
+{
+  "model": "exhibitions.exhibition",
+  "pk": 22,
+  "fields": {
+    "title": "Pre-Raphaelite Sisters",
+    "artist": "Many",
+    "start_date": "2019-10-08",
+    "end_date": "2020-01-26",
+    "image": "https://frieze.com/sites/default/files/pre-raph-main.jpg",
+    "description": "Models, artists, makers, partners and poets. Discover the untold stories of the Pre-Raphaelite Sisters\r\n\r\n170 years after the first pictures were exhibited by the Pre-Raphaelite Brotherhood in 1849, Pre-Raphaelite Sisters, explores the overlooked contribution of twelve women to this iconic artistic movement. Featuring new discoveries and unseen works from public and private collections across the world, this show reveals the women behind the pictures and their creative roles in Pre-Raphaelite\u2019s successive phases between 1850 and 1900.",
+    "rough_price_currency": "GBP",
+    "rough_price": "18.00",
+    "postcode": "WC2H0HE",
+    "gallery": 14,
+    "category": [
+      2,
+      15,
+      7
+    ]
+  }
+},
+{
+  "model": "exhibitions.exhibition",
+  "pk": 23,
+  "fields": {
+    "title": "Leonardo: Experience a Masterpiece",
+    "artist": "Leonardo Da Vinci",
+    "start_date": "2019-11-09",
+    "end_date": "2020-01-12",
+    "image": "https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/08/14/11/the-virgin-on-the-rocks-pic.jpg",
+    "description": "The National Gallery goes in depth for exploration of one of Leonard Da Vinci\u2019s masterpieces, The Virgin of the Rocks. Four rooms will be dedicated to this painting alone, with a painting studio and a chapel being set up alongside original sketches and how they transformed into the 6ft-high painting. Two versions under the surface of the completed image will be revealed via x-ray, showing earlier designs for the Virgin Mary and the angel.",
+    "rough_price_currency": "GBP",
+    "rough_price": "18.00",
+    "postcode": "WC2N5DN",
+    "gallery": 4,
+    "category": [
+      2,
+      15,
+      13,
+      7
+    ]
+  }
+},
+{
+  "model": "exhibitions.exhibition",
+  "pk": 24,
+  "fields": {
+    "title": "Taylor Wessing Photographic Portrait Prize",
+    "artist": "Taylor Wessing",
+    "start_date": "2019-11-07",
+    "end_date": "2020-02-16",
+    "image": "https://www.aestheticamagazine.com/wp-content/uploads/2015/05/final.jpg",
+    "description": "The annual photographic portrait prize returns to the National Portrait Gallery. Pictures of celebrities will be mounted alongside those of unknown faces, with ubiquitous artists next to relative amateurs. The images on show, many of which are being displayed for the first time, show the varying methods of photography used today, and give an intriguing overview of the state of modern photographic practice.",
+    "rough_price_currency": "GBP",
+    "rough_price": "6.00",
+    "postcode": "WC2H0HE",
+    "gallery": 14,
+    "category": [
+      1
+    ]
+  }
+},
+{
+  "model": "exhibitions.exhibition",
+  "pk": 25,
+  "fields": {
+    "title": "Troy: Myth and Reality",
+    "artist": "Many",
+    "start_date": "2019-11-08",
+    "end_date": "2020-03-18",
+    "image": "https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/06/18/10/troy-exhibition-1806.jpg",
+    "description": "Whether you got your Troy education from admiring Brad Pitt or reading the Iliad, the British Museum\u2019s next major exhibition has something for you. It delves into the stories surrounding the ancient city and asks why it has inspired so many, from Homer to Hollywood. There\u2019s plenty to uncover, from the myth of the face that launched a thousand ships to around 300 artefacts discovered during archaeological digs.",
+    "rough_price_currency": "GBP",
+    "rough_price": "20.00",
+    "postcode": "WC1B 3DG",
+    "gallery": 17,
+    "category": [
+      1,
+      5,
+      6,
+      7
+    ]
+  }
+},
+{
+  "model": "exhibitions.exhibition",
+  "pk": 26,
+  "fields": {
+    "title": "Andy Warhol",
+    "artist": "Andy Warhol",
+    "start_date": "2019-11-21",
+    "end_date": "2020-02-27",
+    "image": "https://photos.lci.fr/images/613/344/andy-warhol-marilyn1-865x577-90aa6d-0@1x.jpeg",
+    "description": "This major exhibition presents the outsider at the heart of American art and culture\r\n\r\nAndy Warhol was the son of immigrants who became an American icon. A shy observer who became the hub of New York\u2019s social scene. An artist who embraced consumerism, celebrity and counter culture \u2013 changing modern art in the process.\r\n\r\nHe was born in 1928 as Andrew Warhola to working class parents from present day Slovakia. In 1949 Warhol moved from Pittsburgh to New York, where he was later joined by his mother. Initially working as a commercial illustrator, his skill at transforming the imagery of American culture soon found its unforgettable realisation in his ground-breaking pop art.\r\n\r\nVisitors to this major retrospective will be able to see his iconic pop images of Marilyn Monroe, Coca-Cola and Campbell\u2019s Soup Cans, play with his floating Silver Clouds and experience the psychedelic multimedia environment of the Exploding Plastic Inevitable. The exhibition will bring together rarely seen work from the 1970s that display his skill as a painter, as well as his experiments with different forms of mass media.",
+    "rough_price_currency": "GBP",
+    "rough_price": "22.00",
+    "postcode": "SE19TG",
+    "gallery": 1,
+    "category": [
+      8,
+      9
+    ]
+  }
+},
+{
+  "model": "exhibitions.exhibition",
+  "pk": 27,
+  "fields": {
+    "title": "Picasso & Paper",
+    "artist": "Pablo Picasso",
+    "start_date": "2020-01-08",
+    "end_date": "2020-05-21",
+    "image": "https://d1inegp6v2yuxm.cloudfront.net/royal-academy/image/upload/c_limit,cs_tinysrgb,dn_72,f_auto,fl_progressive.keep_iptc,w_1200/notwb9p8jg2qgl5xjtmn.jpg",
+    "description": "Pablo Picasso rewrote the rules of painting, but he also tore up the rulebook for paper. Bringing together more than 300 of the artist\u2019s works, both on and with paper, this exhibition spans his entire prolific career and represents a significant chapter in modern art.\r\nFor Picasso, paper was more than his rehearsal room, more than just a vehicle for nascent ideas. Ever-resourceful, he used everything from caf\u00e9 tablecloths and newspaper cuttings to antique papers with distinctive watermarks. He created sculptures with torn and burnt pieces of paper, assembled collages, worked with pastel, gouache and watercolour, and spent decades investigating an array of printmaking techniques \u2013 all on the medium of paper.\r\n\r\nThis ground-breaking exhibition charts Picasso\u2019s ingenious use of this universal material. Spanning his entire 80-year career, it offers new insights into his creative spirit and working methods. Highlights include Women at Their Toilette (1937-8), a 4.8 metre-wide collage that will be shown in the UK for the first time in over 50 years. There will also be Cubist papier-coll\u00e9s (cut and pasted papers), sketchbook studies for his great masterpiece, Les Demoiselles d\u2019Avignon, and documentary footage that offers a rare glimpse of Picasso at work.",
+    "rough_price_currency": "GBP",
+    "rough_price": "22.00",
+    "postcode": "W1J 0BD",
+    "gallery": 6,
+    "category": [
+      8,
+      4,
+      7
     ]
   }
 }

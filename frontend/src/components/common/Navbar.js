@@ -20,11 +20,14 @@ class Navbar extends React.Component {
     this.props.history.push('/')
   }
 
-  // checkToken(){
-  //   if (localStorage.token === true ){
-  //     return 
-  //   }
-  // }
+  static isAuthenticated() {
+    const payload = this.getPayload()
+    if (!payload) return false
+    const now = Math.round(Date.now() / 1000)
+    return now < payload.exp //is right now less tahn the expiry time, true give access to site or false means youre not logged in/not valid
+  }
+
+  
 
 
 
@@ -34,15 +37,15 @@ class Navbar extends React.Component {
 
         <nav className="left">
           <Link to='exhibitions/new'><p>Add an exhibition?</p></Link>
+          <Link to='/' onClick={this.logout}><div className='nav-item'>Logout</div></Link>
         </nav>
 
         <nav className="right">
-          <Link to='/exhibitions'><p>What's on?</p></Link>
+          <Link to='/exhibitions'><p>{'What\'s on?'}</p></Link>
           <Link to='/exhibitions-calendar'><p>Calendar</p></Link>
           <Link to='/exhibitions-map'><p>Map</p></Link>
           <Link to='/art-news'><p>Art News</p></Link>
-          <Link to='/'><p>HomePage</p></Link>
-          {localStorage.token && <Link to='/' onClick={this.logout}><div className='nav-item'>Logout</div></Link>}
+          <Link to='/'><i className="fas fa-home"></i></Link>
         </nav>
 
       </nav>
