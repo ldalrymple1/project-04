@@ -1,6 +1,5 @@
 import React from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 
 
 class ArtNews extends React.Component {
@@ -18,14 +17,13 @@ class ArtNews extends React.Component {
   }
 
   getNews() {
-    axios.get('https://newsapi.org/v2/everything?language=en&q=art&exhibition&apiKey=4025da49e1ab46a4b79aee49112ae37c')
-      .then(res => this.setState({ articles: res.data.articles }))
+    axios.get(`https://newsapi.org/v2/everything?language=en&q=art&exhibition&apiKey=${process.env.NEWS_API_KEY}`)
+      .then(res => {
+        console.log(res.data)
+        this.setState({ articles: res.data.articles })
+      })
       .catch(err => console.log(err))
   }
-
-  
-
-
 
   render() {
     console.log(this.state, 'state')
@@ -50,7 +48,7 @@ class ArtNews extends React.Component {
                 </div>
               
                 <div className="card-footer">
-                  <Link to={art.url}><button className="btn btn-primary">Find out more</button></Link>
+                  <a href={art.url}><button className="btn btn-primary">Find out more</button></a>
                 </div>
               </div>
             </div>
@@ -59,8 +57,8 @@ class ArtNews extends React.Component {
       </div>
     )
   }
-
 }
+
 export default ArtNews
 
 

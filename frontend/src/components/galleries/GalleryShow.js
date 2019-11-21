@@ -13,10 +13,7 @@ class GalleryShow extends React.Component {
       exhibitionInfo: [],
       search: ''
     }
-
     this.handleChange = this.handleChange.bind(this)
-
-    
   }
 
   componentDidMount() {
@@ -28,8 +25,6 @@ class GalleryShow extends React.Component {
         this.getExhibitionData()
       })
       .then(err => console.log(err))
-    
-
   }
 
   handleChange(e) {
@@ -45,8 +40,6 @@ class GalleryShow extends React.Component {
         })
         .catch(err => console.log(err))
     })
-    
-
   }
 
   filteredExhibitions() {
@@ -56,7 +49,6 @@ class GalleryShow extends React.Component {
       return re.test(exhib.artist)  // or title
     })
   }
-
 
   render(){
     if (!this.state.exhibitionIds) return null
@@ -107,11 +99,7 @@ class GalleryShow extends React.Component {
             </div>
           ))}
         </div>
-       
-
-
-      </div>
-      
+      </div> 
     )
   }
 }

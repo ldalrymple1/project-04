@@ -47,8 +47,6 @@ class Register extends React.Component {
       .catch(err => console.log(err))
   }
 
-  
-
   render() {
     console.log(this.state)
     return (
@@ -126,8 +124,6 @@ class Register extends React.Component {
           <Link to='/gallery-login'><p>Already have an account?</p></Link>
         </form>  
       </div>
-
-    
     )
   }
 

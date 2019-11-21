@@ -4,12 +4,9 @@ import Auth from '../../lib/auth'
 import Select from 'react-select'
 
 
-
 class ExhibitionNew extends React.Component {
   constructor() {
     super()
-
-
     this.state = {
 
       data: {
@@ -30,8 +27,6 @@ class ExhibitionNew extends React.Component {
       galleries: []
     
     }
-
-
     this.handleCategories = this.handleCategories.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -57,18 +52,12 @@ class ExhibitionNew extends React.Component {
           cat.label = cat.category
           cat.value = cat.category
           return cat
-          
         })
-        // console.log(newArr, 'newarr')
         const data = { ...this.state.data, categories: newArr }
         this.setState({ data }) //id and name 
       })
       .catch(err => console.log(err)) 
   }
-
-
-
-  
 
   handleChange(e) {
     const data = { ...this.state.data, [e.target.name]: e.target.value }
@@ -91,17 +80,6 @@ class ExhibitionNew extends React.Component {
     // const gallery1 = this.state.data.gallery
     this.setState({ data: { ...this.state.data, gallery: gallery1 } })
     // console.log('data', this.state.data)
-
-
-
-    //const gallery = { [e.target.name]: e.target.value }
-    // const gallery = { ...this.state.gallery, name: e.target.value }
-    // this.setState({ gallery })
-    // console.log(this.state.gallery, 'obj')
-    // const gallery = this.state.gallery
-    // this.setState({ data: { ...this.state.data, gallery: gallery } })
-    // console.log('data', this.state.data)
-
   }
 
   handleSubmit(e) {
@@ -137,7 +115,6 @@ class ExhibitionNew extends React.Component {
       })
       .catch(err => console.log(err)) 
   }
-
 
   render() {
     if (!this.state.data.categories) return null
@@ -206,10 +183,6 @@ class ExhibitionNew extends React.Component {
             </div>
           </div>
 
-
-
-          
-          
           <div className="row form">
             <div className="ten columns">
               <label>Choose a Cover Image</label>
@@ -265,8 +238,6 @@ class ExhibitionNew extends React.Component {
             </div>
           </ div>
 
-         
-
           <div className="row form">
             <div className="ten columns">
               <label>Postcode</label>
@@ -294,12 +265,9 @@ class ExhibitionNew extends React.Component {
                 value={this.state.data.category}
               />
               }
-              
             </div>
           </div>
           <button className="create-exhib">Create Exhibition</button>
-
-
         </form>
 
 
@@ -313,7 +281,6 @@ class ExhibitionNew extends React.Component {
         </>
     )
   }
-
 
 }
 

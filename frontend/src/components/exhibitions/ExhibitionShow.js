@@ -6,11 +6,9 @@ class ExhibitionShow extends React.Component {
   constructor() {
     super()
 
-
     this.state = {
       exhibition: [],
       galleries: []
-      // categories: []
 
     }
   }
@@ -23,7 +21,6 @@ class ExhibitionShow extends React.Component {
         this.getGalleries()
       })
       .then(err => console.log(err))
-
   }
 
   getGalleries(){
@@ -38,7 +35,6 @@ class ExhibitionShow extends React.Component {
     console.log(this.state.exhibition, 'the expo')
     console.log(this.state, 'state')
     const exhib = this.state.exhibition
-    console.log(this.state.exhibition.category, 'cats')
     return (
       <div>
         <div className="show-wrapper animated fadeInUp">
@@ -83,14 +79,8 @@ class ExhibitionShow extends React.Component {
         </div>
        
       </div>
-
-
-
-
     )
   }
-
-
 }
 
 export default ExhibitionShow

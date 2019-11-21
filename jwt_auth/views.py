@@ -5,6 +5,8 @@ from django.contrib.auth import get_user_model
 from django.conf import settings
 import jwt
 from .serializers import UserSerializer
+from datetime import datetime, timedelta
+
 User = get_user_model()
 
 class RegisterView(APIView):
@@ -33,6 +35,11 @@ class LoginView(APIView):
 
         if not user.check_password(password):
             raise PermissionDenied({ 'message': 'Invalid Credentials'})
+        
+        dt = datetime.now() + timedelta(days=1)
+        token = jwt.encode({'sub': user.id, 'exp': int(dt.strftime('%s'))}, settings.SECRET_KEY, algorithm='HS256')
 
-        token = jwt.encode({'sub': user.id }, settings.SECRET_KEY, algorithm='HS256') # sub = the subject is...
         return Response({'token': token, 'message': f'Welcome back {user.username}'})
+
+
+# token = jwt.encode({'sub': user.id }, settings.SECRET_KEY, algorithm='HS256') # sub = the subject is...

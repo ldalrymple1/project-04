@@ -3,12 +3,9 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Select from 'react-select'
 
-
-
 class CardExhibitionsIndex extends React.Component {
   constructor() {
     super()
-
 
     this.state = {
       exhibitions: [],
@@ -17,8 +14,6 @@ class CardExhibitionsIndex extends React.Component {
       categoryChosen: 'All',
       animateReady: null
     }
-
-    
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -55,7 +50,7 @@ class CardExhibitionsIndex extends React.Component {
       .catch(err => console.log(err))
     
   }
-  
+
   filteredExhibitions() {
     const { exhibitions, search } = this.state
     const re = new RegExp(search, 'i')
@@ -68,8 +63,6 @@ class CardExhibitionsIndex extends React.Component {
     return filteredExhibitionsArr
   }
 
-  
-
   handleSubmit(e) {
     e.preventDefault()
     if (this.state.categoryChosen === 'Pottery') {
@@ -77,23 +70,14 @@ class CardExhibitionsIndex extends React.Component {
     }
   }
 
- 
-
-
   render () {
     if (!this.state.exhibitions) return null
-    // if (!this.state.exhibitions.gallery) return null
     console.log(this.state, 'state')
-    console.log(this.state.exhibitions, 'exhibs')
-    // console.log(this.state.categoryChosen, 'chosen cat')
     const { exhibitions, categories } = this.state
-   
-    
     return (
       <div className="animated fadeInUp">
         <h1 className="index-title">Exposure</h1>
    
-
         <div className="search-wrapper">
 
           <div className="form-group">
@@ -115,7 +99,6 @@ class CardExhibitionsIndex extends React.Component {
             </select>
           </div>
             
-
           <div className="search-div">
             <input
               className="field"
@@ -125,24 +108,8 @@ class CardExhibitionsIndex extends React.Component {
             />
             <button className="btn btn-primary">Search</button>
           </div>
-
-
-
-
-
-
-
-
         </div>
        
-        
-
-            
-        
-
-
-
-      
         <div className="index-card-wrapper">
           {this.filteredExhibitions().map(exhib => (
             <Link to={`/exhibitions/${exhib.id}`} key={exhib.id}>
@@ -175,27 +142,7 @@ class CardExhibitionsIndex extends React.Component {
       </div>
     )
   }
-
-
 }
 
 export default CardExhibitionsIndex
 
-{/* <Link to={`/exhibitions/${exhib.id}`}> */}
-{/* </Link> */}
-
-
-{/* <div className="index-card" >
-<Link to={`/exhibitions/${exhib.id}`}> <h3>{exhib.title}</h3> </Link>
-<img className="card-images" src={exhib.image} alt={exhib.title} />
-<p>{exhib.start_date} - {exhib.end_date}</p>
-<p>{exhib.gallery.name}</p>
-
-<p>{exhib.category.map(cat => (
-  cat.category))}</p> */}
-
-//   map(gal => (
-//     <div key={gal.id}>
-//       <p>{gal.name}</p>
-//     </div>))}
-// </div>

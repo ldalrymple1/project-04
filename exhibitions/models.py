@@ -2,8 +2,6 @@ from djmoney.models.fields import MoneyField
 from django.db import models
 
 
-
-
 # GALLERY MODEL
 class Gallery(models.Model):
     name = models.CharField(max_length=50)
@@ -18,7 +16,6 @@ class Category(models.Model):
     def __str__(self):
         return f'{self.category}'
     
-
 
 # EXHIBITION MODEL
 class Exhibition(models.Model):
@@ -44,9 +41,6 @@ class Exhibition(models.Model):
     def __str__(self):
         return f'{self.title}'
 
-
-# add gallery!! (the person who created.....)
-# Artist and category will be nested
 
 # SPECIFY Blank  = true IF not required
 # SPECIFY NULL = TRUE IF NOT REQUIRED

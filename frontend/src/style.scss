@@ -8,8 +8,6 @@ $pinkyorange: #E83F6F;
 $offwhite:  rgb(249, 244, 244);
 $transpinkyorange: rgba(232, 63, 111, 0.575);
 
-
-
 * {
   box-sizing: border-box;
 }
@@ -24,7 +22,8 @@ main {
   height: 100vh;
 }
 
-// NAV BAR
+
+// ***********************************************  NAV BAR  ************************************************** //
 
 nav {
   height: 50px;
@@ -33,19 +32,14 @@ nav {
   align-content: flex-end;
   width: 100vw;
   justify-content: flex-end;
-  // background: chartreuse;
   align-items: center;
   font-family: 'Bebas Neue', cursive;
   font-size: 23px;
-  // background: rgb(41, 8, 148);
 
   nav.left {
-    // background: yellow;;
     display: flex;
     justify-content: flex-start;
   }
-
-  
 }
 
 nav > a > .nav-item {
@@ -58,8 +52,6 @@ nav > a > p {
   text-decoration: none;
   margin: 5px 15px;
   color: $pinkyorange;
-  
-  
 }
 
 .fa-home {
@@ -80,7 +72,6 @@ nav > a:hover {
   height: 5px;
 }
 
-
 nav > a:hover {
   border-top: #E83F6F;
   border-bottom: 2px solid #E83F6F;
@@ -94,7 +85,7 @@ nav > a:hover {
   color: $pinkyorange;
 }
 
-// HOME PAGE 
+// ***********************************************  HOME PAGE  ************************************************** //
 
 .home-wrapper {
   display: flex;
@@ -102,7 +93,6 @@ nav > a:hover {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
 }
 
 .home-title {
@@ -111,8 +101,6 @@ nav > a:hover {
   font-size: 230px;
   border-top: 2px solid #E83F6F;
   border-bottom: 2px solid #E83F6F;
-
-
 }
 
 button.home {
@@ -123,14 +111,12 @@ button.home {
   width: 70px;
   color: $pinkyorange;
   border: 0.5px solid black;
-  
 }
 
 .home-writing {
   font-family: 'Playfair Display', serif;
   font-size: 17px;
   letter-spacing: 3px;
-
 }
 
 .sub-writing {
@@ -150,7 +136,6 @@ button.home {
   font-size: 15px;
   letter-spacing: 1px;
   margin-top: 10px;;
-
 }
 
 .line {
@@ -159,7 +144,7 @@ button.home {
 }
 
 
-// REGISTER PAGE
+// ***********************************************  REGISTER PAGE  ************************************************** //
 
 .register-title {
   text-align: center;
@@ -170,15 +155,12 @@ button.home {
 
 .reg-form-wrapper {
   margin: auto;
-  // background: red;
   display: flex;
   justify-content: center;
   height: 100%;
   align-items: center;
-  // background-image: url('https://45n0pr1wpm3ox9mbl3x0rhco-wpengine.netdna-ssl.com/wp-content/uploads/fly-images/44554/1-9999x700.jpg');
   background-image: url('https://cdn.wallpaper.com/main/2019/09/00_tai-shani-dc-semiramis-2019-installation-turner-prize-2019-at-turner-contemporary.-photo-by-david-levene-1.gif');
   background-size: cover;
-  // background-image: url('https://www.airfrance.co.uk/GB/common/common/img/tbaf/news/NYC/que-voir-au-moma-de-new-york-en-ce-debut-d-annee/NYC-que-voir-au-moma-de-new-york-en-ce-debut-d-annee-2_1-1280x640.jpg');
 
   form {
     border: 1px solid black;
@@ -188,7 +170,6 @@ button.home {
     justify-content: center;
     flex-direction: column;
     transform: scale(0.85);
-    // background: white;
     background: rgb(249, 244, 244);
 
     .error {
@@ -201,8 +182,6 @@ button.home {
       display: flex;
       justify-content: center;
     }
-
-    
 
   }
 }
@@ -220,14 +199,13 @@ form > button {
   margin: 0;
   font-family: 'Oswald', sans-serif;
   margin: auto;
-
 }
+
 input.u-full-width.error {
-  background-color:green;
   border: 1px solid red;
 }
 
-// LOGIN PAGE 
+// ***********************************************  LOGIN  ************************************************** //
 
 
 .login-form-wrapper {
@@ -236,13 +214,7 @@ input.u-full-width.error {
   justify-content: center;
   height: 100%;
   align-items: center;
-  // background-image: url('https://45n0pr1wpm3ox9mbl3x0rhco-wpengine.netdna-ssl.com/wp-content/uploads/fly-images/36649/E_2016_2000a-b-CROPPED-9999x700.jpg'); // n0.1
-  // background-image: url('https://www.airfrance.co.uk/GB/common/common/img/tbaf/news/NYC/que-voir-au-moma-de-new-york-en-ce-debut-d-annee/NYC-que-voir-au-moma-de-new-york-en-ce-debut-d-annee-2_1-1280x640.jpg');
-  // background-image: url(http://s3-us-west-2.amazonaws.com/vagallery/wp-content/uploads/2019/06/13200435/NEWBUILDING-07-1024px.jpg);
-  background-image: url('https://pbs.twimg.com/media/Dndr-A_X4AA1Aw2.jpg'); // LOGIN
-  // background-image: url('https://cdn.wallpaper.com/main/2019/09/00_tai-shani-dc-semiramis-2019-installation-turner-prize-2019-at-turner-contemporary.-photo-by-david-levene-1.gif'); // no 3
-  // background-image: url('https://img.theculturetrip.com/wp-content/uploads/2019/08/galeria.jpg'); // no 2.
-
+  background-image: url('https://pbs.twimg.com/media/Dndr-A_X4AA1Aw2.jpg'); 
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -254,7 +226,6 @@ input.u-full-width.error {
     display: flex;
     justify-content: center;
     flex-direction: column;
-
   }
 
   .login-form-wrapper.form.button.login {
@@ -264,37 +235,10 @@ input.u-full-width.error {
 }
 
 .login {
-  margin:auto;
+  margin: auto;
 }
 
-
-// form {
-//   border: 1px solid black;
-//   padding: 20px;
-//   height: 80%;
-//   width: 40%;
-//   display: flex;
-//   justify-content: center;
-//   flex-direction: column;
-  
-
-//   .error {
-//     color: red;
-
-//   }
-
-//   .row.form {
-//     margin: 0;
-//     display: flex;
-//     justify-content: center;
-//   }
-
-// }
-// }
-
-
-
-// CARD INDEX PAGE 
+// ***********************************************  INDEX PAGE  ************************************************** //
 
 
 h1.index-title {
@@ -315,22 +259,6 @@ h2.index-title {
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 20px;
-  // background: chartreuse;
-  
-
-  // .index-card {
-  //   height: 420px;
-  //   width: 340px;
-  //   border: 2px solid black;
-  //   margin: 5px;
-  // }
-
-  // .img-responsive  {
-  //   height: 250px;
-  //   width: 300px;
-  //   transform: scale(0.9);
-  // }
-
 }
 
 
@@ -344,10 +272,7 @@ h2.index-title {
 
 .card:hover {
   transform: scale(1.05)
-
 }
-
-
 
 .card > .card-image > img {
   height: 242px;
@@ -359,12 +284,10 @@ h2.index-title {
   -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
   filter: grayscale(100%); /* FF 35+ */
   cursor: pointer;
-
 }
 
 .card > .card-header > a > .card-title.h5 {
   font-size: 27px;
-  // font-weight: 800;
   color:black;
 }
 
@@ -376,12 +299,7 @@ h2.index-title {
   max-height: 130px;
 }
 
-.card
-
-
-
 .location {
-
   display: flex;
   flex-direction: row;
   max-height: 25px;
@@ -391,7 +309,6 @@ h2.index-title {
     width:25px;
     margin-right: 8px;;
   }
-  
 }
 
 .btn.btn-primary {
@@ -403,9 +320,6 @@ h2.index-title {
   background: #E83F6F;
 
 }
-
-
-
 
 .search-field > input {
   // display:flex;
@@ -429,7 +343,6 @@ select.four.columns {
   width:50%;
 }
 
-
 select.form-select.option {
   font-size: 20px;;
 }
@@ -439,11 +352,6 @@ select.form-select.option {
   flex-direction: row;
 }
 
-// .row.searchbar {
-//   display: flex;
-//   flex-direction: row;
-//   background: chartreuse;;
-// }
 .twelve.columns.search-field {
   display: flex;
   flex-direction: row;
@@ -453,7 +361,6 @@ select.form-select.option {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  // background: blue;
   margin:auto;
   width:75%;
 }
@@ -461,9 +368,7 @@ select.form-select.option {
 .form-group {
   display: flex;
   flex-direction: row;
-  // background: yellow;
   align-items: center;
-  // margin-left: 80px;;
   width: 40%;
 }
 
@@ -471,12 +376,8 @@ select.form-select.option {
   width: 60%;
   margin: 20px;
   margin-top: 28px;
-  // background: green;
   display: flex;
   justify-content: flex-start;
-
-  
-  
 }
 
 .search-div > input {
@@ -513,15 +414,13 @@ select.form-select {
 }
 
 
-// EXHIBITION SHOW PAGE
+// ***********************************************  EXHIB SHOW PAGE  *********************************************** //
 
 .show-wrapper {
   margin:auto;
   margin: 20px 100px;
-  // width: 90vw;
   font-family: 'Oswald', sans-serif;
   padding-left: 50px;
-
 }
 
 .index-card-wrapper > a {
@@ -529,86 +428,59 @@ select.form-select {
   text-decoration: none;
 }
 
-
-
 .show-space {
-  // border: 2px solid black;
   display: flex;
-  // width: 80%;
 
   .show-image {
     width: 60%;
-    // background: coral;
     margin-right: 70px;;
   }
 
   .list-of-galls {
     flex-grow: 1;
-    // background: cyan;
     display: flex;
     flex-direction: column;
-    // flex-wrap: wrap;
     max-height: 550px;
     width:20%;
     background: rgb(249, 244, 244);
     padding: 12px;
-    
-
-    
   }
-
-
 }
 
 .list-of-galls2 {
   display: flex;
   flex-wrap: wrap;
-  // background: chartreuse;
 }
 
 
 
 .buzz-gallery  {
-  
   margin: 5px;
-  // padding: 5px;;
   background: pink !important;
   
   color: black;
   transition: all .2s ease-in-out
-  
-  
   
 }
 .buzz-gallery > h4 {
   font-size: 20px;
   padding: 3px;
   transition: all .2s ease-in-out;
-
-
 }
-
-
 
 .list-of-galls2 > a:hover{
   text-decoration: none;
-  
 }
 
 .buzz-gallery > h4:hover {
   background: $pinkyorange;
   transform: scale(1.1);
   text-decoration: none;
-  
-  
 }
 
 .gallery-list {
-  // background: darkblue;
-  // width: 100%;
   font-family: 'Bebas Neue', cursive;
   display: flex;
-  // justify-content: center;
 }
 
 .show-image > img {
@@ -630,12 +502,10 @@ p.date {
   flex-direction: column;
 }
 
-
 .buzzword-wrapper {
 
   display: flex;
   flex-direction: row;
-
 
   .buzz-word {
     background: pink;;
@@ -649,13 +519,9 @@ p.date {
     
   }
 
-  
-  
-
   .buzz-word:hover {
     background: $pinkyorange;
     transform: scale(1.1)
-    
   }
   
   .category {
@@ -666,28 +532,19 @@ p.date {
     font-family: 'Bebas Neue', cursive;
     color: black;
     letter-spacing: 1.5px;
-    
-    
-
-    
-
   }
-
-
-
 }
 
 
 
 
-// EXHIBTION NEW
+// ***********************************************  EXHIBITION NEW  ************************************************ //
 
 .new-form-wrapper {
   display: flex;
   justify-content: center;
   width: 100vw;
   background-image: url('https://anotherimg-dazedgroup.netdna-ssl.com/1564/azure/another-prod/290/9/299434.jpg');
-  
   background-image: url('https://cdn.wallpaper.com/main/2019/09/00_tai-shani-dc-semiramis-2019-installation-turner-prize-2019-at-turner-contemporary.-photo-by-david-levene-1.gif');
   background-image: url('https://45n0pr1wpm3ox9mbl3x0rhco-wpengine.netdna-ssl.com/wp-content/uploads/fly-images/36649/E_2016_2000a-b-CROPPED-9999x700.jpg');
   background-size: cover;
@@ -709,7 +566,6 @@ p.date {
       width: 300px;
     }
 
-
     .row.form {
       margin: 0;
       display: flex;
@@ -719,24 +575,10 @@ p.date {
     button.create-exhib {
       margin: 10px, 0px;
     }
-
   }
-
-
 }
 
-// .row.form.select {
-//   display: flex;
-//   flex-direction: column;
-  
-// }
-
-
-
-
-
-
-// MAPBOX
+// ***********************************************  MAP BOX  ************************************************** //
 
 .map-wrapper {
   display: flex;
@@ -745,7 +587,6 @@ p.date {
   margin: auto;
   width: 95%;
   padding-bottom: 80px;
-
 
   .map-title > h1 {
     font-family: 'Bebas Neue', cursive;
@@ -772,11 +613,6 @@ p.date {
   background: $pinkyorange;
 }
 
-// .overlays {
-//  display: flex;
-//  justify-content: center;
-// }
-
 .my-icon {
   background-image: url('https://docs.mapbox.com/mapbox-gl-js/assets/washington-monument.jpg');
   background-size: cover;
@@ -794,26 +630,17 @@ p.date {
   background: #3bb2d0;
 }
 
-// ART NEWS 
+// ***********************************************  ART NEWS  ************************************************** //
 
 .card-title-news {
   font-size: 20px;
 }
 
 .news-description {
-  // font-family: 'Bebas Neue', cursive;
   font-family: 'Oswald', sans-serif;
-  // font-family: 'Playfair Display', serif;
-
-
 }
 
-
-
-
-
-
-
+// ***********************************************  SKELETON   ************************************************** //
 
 
 // *** SKELETON STYLING *** //
@@ -1239,6 +1066,7 @@ there.
 // *** END OF SKELETON *** //
 
 
+// ***********************************************  ANIMATE CSS  ************************************************** //
 
 
 // ANIMATE CSS

@@ -75,10 +75,7 @@ class ExhibitionSerializer(serializers.ModelSerializer):
         exhibition.category.set(category)
         return exhibition
 
-        
-
-
-    
+      
     class Meta:
         model = Exhibition
         fields = ('id', 'title', 'artist', 'start_date', 'end_date', 'image', 'description', 'rough_price', 'postcode', 'gallery', 'category')

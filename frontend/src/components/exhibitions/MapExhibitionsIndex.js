@@ -26,35 +26,7 @@ class MapExhibitionsIndex extends React.Component {
     
     } 
     this.populateMap = this.populateMap.bind(this)
-
   }
-
-  // componentDidMount() {
-  //   axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=${process.env.MAPBOX_ACCESS_TOKEN}`)
-  //     .then(res => console.log('hello', res))
-  //     .catch(err => console.log(err))
-  // }
-
-  // populateMap() {
-  //   this.state.exhibitions.map((exhib) => {
-  //     axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${exhib.postcode.replace(' ','')}.json?access_token=${process.env.MAPBOX_ACCESS_TOKEN}`)
-  //       .then(res => {
-  //         const long = res.data.features[0].geometry.coordinates[0]
-  //         const lat = res.data.features[0].geometry.coordinates[1]
-  //         const _id = exhib._id
-  //         // exhib.lat = lat
-  //         // exhib.long = long
-  //         // return exhib
-  //         console.log(exhib.postcode)
-  //         this.setState({ exhibitions: [...this.state.exhibitions, { _id, long, lat }] })
-  //         console.log(this.state.exhibitions, 'checking')
-  //       })
-  //       .catch(err => console.log(err))
-
-  //   })
-   
-  // }
-
 
   populateMap() {
     this.state.exhibitions.map(exhib => {
@@ -68,7 +40,6 @@ class MapExhibitionsIndex extends React.Component {
           this.setState({ exhibPins: [...this.state.exhibPins, { _id, long, lat }] })
         })
         .catch(err => console.log(err))
-
     })
   }
 
@@ -84,38 +55,8 @@ class MapExhibitionsIndex extends React.Component {
     
   }
 
-  // _renderPopup() {
-  //   const { popupInfo } = this.state
-  //   const { exhibPins } = this.state
-
-  //   return (
-  //     popupInfo && (
-  //       <Popup
-  //         tipSize={5}
-  //         anchor="top"
-  //         longitude={exhibPins.long}
-  //         latitude={exhibPins.lat}
-  //         closeOnClick={false}
-  //         onClose={() => this.setState({ popupInfo: null })}
-  //       >
-  //         <MapExhibInfo info={popupInfo} />
-  //       </Popup>
-  //     )
-  //   )
-  // }
-
-
-
   
-
-  
-  // map the exhibs 
-
-  // .then(res => this.setState({ bikepoints: res.data }))
-
   render() {
-    // if (!this.state.exhibitions[10].lat) return null
-    // if (!this.state.exhibitions[10].lat) return null
     if (!this.state.popupInfo) return null
     console.log(this.state, 'state')
     return (
@@ -156,17 +97,9 @@ class MapExhibitionsIndex extends React.Component {
               </Marker>
             ))} 
 
-          
           </ReactMapGL>
-
-
-
         </div>
- 
-
-
       </div>
-      
     )
   }
 }
