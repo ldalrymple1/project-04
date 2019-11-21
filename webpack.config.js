@@ -1,7 +1,9 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const DotEnv = require('dotenv-webpack')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+require('dotenv').config()
+
 
 module.exports = {
   entry: './src/app.js',
@@ -30,12 +32,16 @@ module.exports = {
     }
   },
   plugins: [
-    new DotEnv(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       filename: 'index.html',
       inject: 'body'
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from: './src/assets', to: 'assets' }
+    ]),
+    new webpack.EnvironmentPlugin(['MAPBOX_ACCESS_TOKEN','NEWS_API_KEY'])
+
   ]
 }
