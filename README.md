@@ -1,79 +1,167 @@
-# project-04
-Django and React App
+# EXPOSURE
+
 
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #4: A Django + React App
+
+# EXPOSURE
+
+Aimed at art enthusiasts, Exposure is a full-stack React and Python web app that it allows users to browse upcoming art exhibitions in London.
+
+## Built With
+
+1. HTML5
+2. SCSS, Spectre & Skeleton
+3. Javascript
+   * ECMAScript6
+   * React.js
+4. Python
+   * Django
+5. mySQL
+   * PostgreSQL
+6. GitHub
+
+## Deployment
+
+This web app is deployed on Heroku and it can be found here: https://exposure-to-art.herokuapp.com
 ​
-## Overview
-​
-**You’ve come a long way, and it's time to show it.** This will be your most advanced project to date. It is __IMPORTANT__ to note that when we say _advanced_, the project doesn't necessarily need to have lots more functionality.
-​
-**Remember:** simple code is stable code, so always favour refactoring and bug fixing over adding more functionality.
-​
-With this in mind, you need to be smart about how you plan, limit your project scope to be achievable (in terms of functionality) and focus on quality rather than quantity.
-​
-**Solo or Group?**
-You are free to work alone or in a group. Both ways have their pros and cons. Remember if you are working in a team that you are all on the same page and working towards the same goal.
-​
-Make sure you review your project proposal with your instructor so you can make sure it's **something you can accomplish in the limited time we have**. You will have some time after the project to add extra functionality before your Meet & Hire!
-​
----
-​
-## Technical Requirements
-​
-You must:
-​
-* **Build a full-stack application** by making your own backend and your own front-end
-* **Use a Python Django API** using Django REST Framework to serve your data from a Postgres database
-* **Consume your API with a separate front-end** built with React
-* **Be a complete product** which most likely means multiple relationships and CRUD functionality for at least a couple of models
-* **Implement thoughtful user stories/wireframes** that are significant enough to help you know which features are core MVP and which you can cut
-* **Have a visually impressive design** to kick your portfolio up a notch and have something to wow future clients & employers. **ALLOW** time for this.
-* **Be deployed online** so it's publicly accessible.
-* **Have automated tests** for _at least_ one RESTful resource on the back-end. Improve your employability by demonstrating a good understanding of testing principals.
-​
----
-​
-## Necessary Deliverables
-​
-* A **working app** hosted on the internet
-* A **link to your hosted working app** in the URL section of your Github repo
-* A **git repository hosted on Github**, with a link to your hosted project, and frequent commits dating back to the _very beginning_ of the project
-* **A `readme.md` file** with:
-    * An embedded screenshot of the app
-    * Explanations of the **technologies** used
-    * A couple paragraphs about the **general approach you took**
-    * **Installation instructions** for any dependencies
-    * Link to your **user stories/wireframes** – sketches of major views / interfaces in your application
-    * Link to your **pitch deck/presentation** – documentation of your wireframes, user stories, and proposed architecture
-    * Descriptions of any **unsolved problems** or **major hurdles** you had to overcome
-​
----
-​
-## Suggested Ways to Get Started
-​
-* **Don’t get too caught up in too many awesome features** – simple is always better. Build something impressive that does one thing well.
-* **Design first.** Planning with user stories & wireframes before writing code means you won't get distracted changing your mind – you'll know what to build, and you can spend your time wisely by just building it.
-* **Don’t hesitate to write throwaway code** to solve short term problems.
-* **Read the docs for whatever technologies / frameworks / API’s you use**.
-* **Write your code DRY** and **build your APIs RESTful**.
-* **Be consistent with your code style.** You're working in teams, but you're only making one app per team. Make sure it looks like a unified effort.
-* **Commit early, commit often.** Don’t be afraid to break something because you can always go back in time to a previous version.
-* **Keep user stories small and well-defined**, and remember – user stories focus on what a user needs, not what development tasks need accomplishing.
-* **Write code another developer wouldn't have to ask you about**. Do your naming conventions make sense? Would another developer be able to look at your app and understand what everything is?
-* **Make it all well-formatted.** Are you indenting, consistently? Can we find the start and end of every div, curly brace, etc?
-* **Comment your code.** Will someone understand what is going on in each block or function? Even if it's obvious, explaining the what & why means someone else can pick it up and get it.
-* **Write pseudocode before you write actual code.** Thinking through the logic of something helps.
-​
----
-​
-## Project Feedback + Evaluation
-​
-* __Project Workflow__: Did you complete the user stories, wireframes, task tracking, and/or ERDs, as specified above? Did you use source control as expected for the phase of the program you’re in (detailed above)?
-​
-* __Technical Requirements__: Did you deliver a project that met all the technical requirements? Given what the class has covered so far, did you build something that was reasonably complex?
-​
-* __Creativity__: Did you added a personal spin or creative element into your project submission? Did you deliver something of value to the end user (not just a login button and an index page)?
-​
-* __Code Quality__: Did you follow code style guidance and best practices covered in class, such as spacing, modularity, and semantic naming? Did you comment your code as your instructors as we have in class?
-​
-* __Problem Solving__: Are you able to defend why you implemented your solution in a certain way? Can you demonstrated that you thought through alternative implementations? _(Note that this part of your feedback evaluation will take place during your one-on-one code review with your instructors, after you've completed the project.)_
+
+## Set Up 
+
+After cloning the repo to your local machine, you can run the app with these commands:
+
+```
+<!-- to install JavaScript Packages: -->
+$ yarn
+<!-- to install Python packages: -->
+$ pipenv install django
+<!-- to install Python packages: -->
+$ createdb project-04
+<!--Then to seed the database: -->
+$ python manage.py loaddata exhibitions/seeds.json
+<!-- Run the frontend in your localhost: -->
+$ yarn serve:front
+<!-- Run the backend in your localhost: -->
+$ yarn serve:back
+```
+## Brief
+
+This was my final project at GA. We were given the option to either work in a group or individually. Following the third project which was group, I decided to do it individually so that I could use the opportunity as a means to test my own learning and showcase my abilities. Working individually with just one week I had to decide which features were core MVP and which ones I would have to cut for the deadline, and add further on down the line.
+
+## User Experience
+
+The user does not have to be logged in to browse the website for exhibitions. When the user lands on the homepage, they are asked if they are a gallerist.
+
+<img src="./frontend/src/assets/homepage.png" >
+
+If they aren't a gallerist thye are redirected to the index page to browse the exhibitions.
+
+<img src="./frontend/src/assets/indexcard.png" >
+
+If they are a gallerist they they are redirected to the register page.
+
+<img src="./frontend/src/assets/register.png" >
+
+If they already have an account they click on the link and are redirected to the login page. 
+
+<img src="./frontend/src/assets/login.png" >
+
+Once they are logged in they land on the index page to browse the exhibitions, just like a user who isnt logged in. The only difference is that they are given the option in the top left hand corner of the navbar to add an exhibition as well as logout.
+
+The user can refine their seach for exhibitions by typing in artists in the nav bar aswell as filter by category in the dropdown menu.  When they click on a card it takes them to the show page to find out more about an exhibition. 
+
+<img src="./frontend/src/assets/show.png" >
+
+At the bottom of the show page are category buzzwords which the user can click on. This will take them to a page with all the exhibitions that match that category. Similarly there is box of all the galleries.
+
+I built my own API for the exhibitions but also wanted to use a third party API. I decided to use the News API to get art related news as well as mapbox. Mapbox enabled me to mark all the exhibitions on a map and I even added geo location. 
+
+News
+<img src="./frontend/src/assets/news.png" >
+
+Map
+<img src="./frontend/src/assets/map.png" >
+
+
+## Planning
+
+In order to plan my backend models I drew a relationship diagram:
+
+IMG DIAGRAM
+
+I also did some rough wireframes as to how I wanted my product to look.
+
+IMG WIREFRAMES
+
+I learnt from previous projects the importance of planning therefore used Trello to organise and set myself daily goals.
+
+<img src="./frontend/src/assets/trello.png" >
+
+I also used Insomnia to organise my back-end as I preferred it to the Django admin rest framework.
+
+<img src="./frontend/src/assets/insomnia.png" >
+
+
+## Challenges
+
+This was the first time I used Python and Django.
+
+
+Mapbox
+
+```  populateMap() {
+    this.state.exhibitions.map(exhib => {
+      axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${exhib.postcode.replace(' ','')}.json?access_token=${process.env.MAPBOX_ACCESS_TOKEN}`)
+        .then(res => {
+          console.log(res, 'the res')
+          const long = res.data.features[0].geometry.coordinates[0]
+          const lat = res.data.features[0].geometry.coordinates[1]
+          const _id = exhib._id
+          console.log(exhib.postcode)
+          this.setState({ exhibPins: [...this.state.exhibPins, { _id, long, lat }] })
+        })
+        .catch(err => console.log(err))
+    })
+  }
+```
+
+  
+  
+  In the back-end I had to add my own abstract user model as I needed to add a field called 'gallery_name'. Then when a gallery registers their data is sent to the database because when a gallery wants to create an exhibition gallery was a required field so for it to appear on the dropdwon menu I had to send their gallery anme to the data base
+
+  ```sendGalleryData(){
+    const gall = { 
+      name: this.state.data.gallery_name,
+      exhibitions: []
+    }
+    axios.post('/api/galleries', gall)
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
+  }
+```
+
+
+## Future Features 
+When planning I wanted to have a heavier focus on the front-end. I intended to have three different views: a card view, calendar view and map view. Sadly I ran out of time to do the calendar view but I am planning to add this feature in the near future. 
+
+## Wins 
+When I first started this project, I had only been learning Python and PostgreSQL for one week.  Django framework, allowed me to set up a fully-functional back-end in just a day and a half giving me lots of time to focus on the front-end. I was also proud that I managed to do this project alone to prove to myself that I am a capable developer. I used it as an opportunity to put into practise all the skills I had learnt over the 12 weeks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
