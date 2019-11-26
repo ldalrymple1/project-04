@@ -18,7 +18,7 @@ class GalleryShow extends React.Component {
 
   componentDidMount() {
     const galleryId = this.props.match.params.id
-    axios.get(`/api/galleries/${galleryId}`)
+    axios.get(`/api/galleries/${galleryId}/`)
       .then(res =>  {
         this.setState({ gallery: res.data.name }) // Getting the category name
         this.setState({ exhibitionIds: res.data.exhibitions }) // Getting the category IDs
@@ -33,7 +33,7 @@ class GalleryShow extends React.Component {
 
   getExhibitionData(){
     this.state.exhibitionIds.map((exId) => {
-      axios.get(`/api/exhibitions/${exId}`)
+      axios.get(`/api/exhibitions/${exId}/`)
         .then(res => {
           console.log(res.data, 'getting all expo data')
           this.setState({ exhibitionInfo: [...this.state.exhibitionInfo, res.data ] }) // Makes each res be added to the array 

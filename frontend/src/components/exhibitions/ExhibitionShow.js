@@ -15,7 +15,7 @@ class ExhibitionShow extends React.Component {
 
   componentDidMount(){
     const exhibId = this.props.match.params.id
-    axios.get(`/api/exhibitions/${exhibId}`)
+    axios.get(`/api/exhibitions/${exhibId}/`)
       .then(res => {
         this.setState({ exhibition: res.data })
         this.getGalleries()
@@ -51,7 +51,7 @@ class ExhibitionShow extends React.Component {
               </div>
               <div className="list-of-galls2">
                 {this.state.galleries.map(gal => (
-                  <Link to={`/galleries/${gal.id}`} key={gal.id}>
+                  <Link to={`/galleries/${gal.id}/`} key={gal.id}>
                     <div className="buzz-gallery">
                       <h4 >{gal.name}</h4>
                     </div>
@@ -69,7 +69,7 @@ class ExhibitionShow extends React.Component {
           <p className="date">Categories</p>
           <div className="buzzword-wrapper">
             {exhib.category.map(cat => (
-              <Link to={`/categories/${cat.id}`} key={cat.id}>
+              <Link to={`/categories/${cat.id}/`} key={cat.id}>
                 <div className="buzz-word">
                   <p className="category">{cat.category}</p>
                 </div>

@@ -7,7 +7,8 @@ class ArtNews extends React.Component {
     super()
 
     this.state = {
-      articles: []
+      articles: [],
+      animateReady: null
     }
 
   }
@@ -26,9 +27,12 @@ class ArtNews extends React.Component {
   }
 
   render() {
-    console.log(this.state, 'state')
+    if (!this.state.articles) return null
+    setTimeout(() => {
+      this.setState({ animateReady: true })
+    }, 200)
     return (
-      <div className="animated fadeInUp">
+      <div className={`${this.state.animateReady ? 'animated fadeInUp' : 'hide' }`}>
         <h1 className="index-title">Art News</h1>
         <div className="index-card-wrapper">
           {this.state.articles.map((art, i) => (

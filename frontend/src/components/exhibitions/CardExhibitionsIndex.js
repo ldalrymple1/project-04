@@ -34,11 +34,6 @@ class CardExhibitionsIndex extends React.Component {
 
   // CREATE FUNCTION THAT SPECIFIES IF FREE!
 
-  // freeExhib(){
-  //   if (this.state.exhibitions.rough_price === 0.00) {
-  //     return 'FREE'
-  //   }
-  // }
 
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value })
@@ -73,9 +68,12 @@ class CardExhibitionsIndex extends React.Component {
   render () {
     if (!this.state.exhibitions) return null
     console.log(this.state, 'state')
+    setTimeout(() => {
+      this.setState({ animateReady: true })
+    }, 50)
     const { exhibitions, categories } = this.state
     return (
-      <div className="animated fadeInUp">
+      <div className={`${this.state.animateReady ? 'animated fadeInUp' : 'hide' }`}>
         <h1 className="index-title">Exposure</h1>
    
         <div className="search-wrapper">

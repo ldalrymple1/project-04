@@ -37,10 +37,10 @@ const App = () => (
     <main>
       <Navbar />
       <Switch>
+        <Route path='/exhibitions/:id' component={ExhibitionShow} />
         <Route path='/exhibitions/new' component={ExhibitionNew} />
         <Route path='/categories/:id' component={CategoryShow} />
         <Route path='/galleries/:id' component={GalleryShow} />
-        <Route path='/exhibitions/:id' component={ExhibitionShow} />
         <Route path='/gallery-login' component={Login} />
         <Route path='/gallery-register' component={Register} />
         <Route path='/exhibitions-calendar' component={CalendarExhibitionsIndex} />
