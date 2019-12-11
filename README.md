@@ -84,13 +84,8 @@ Map
 
 ## Planning
 
-In order to plan my backend models I drew a relationship diagram:
+In order to plan my backend models I drew a relationship diagram and I also did some rough wireframes as to how I wanted my product to look.
 
-IMG DIAGRAM
-
-I also did some rough wireframes as to how I wanted my product to look.
-
-IMG WIREFRAMES
 
 I learnt from previous projects the importance of planning therefore used Trello to organise and set myself daily goals.
 
