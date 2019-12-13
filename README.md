@@ -7,6 +7,14 @@
 
 Aimed at art enthusiasts, Exposure is a full-stack React and Python web app that it allows users to browse upcoming art exhibitions in London.
 
+## Brief
+
+This was my final project at GA. We were given the option to either work in a group or individually. Following the third project which was group, I decided to do it individually so that I could use the opportunity as a means to test my own learning and showcase my abilities. Working individually with just one week I had to decide which features were core MVP and which ones I would have to cut for the deadline, and add further on down the line.
+
+## Deployment
+
+This web app is deployed on Heroku and it can be found here: https://exposure-to-art.herokuapp.com
+
 ## Built With
 
 1. HTML5
@@ -20,10 +28,6 @@ Aimed at art enthusiasts, Exposure is a full-stack React and Python web app that
    * PostgreSQL
 6. GitHub
 
-## Deployment
-
-This web app is deployed on Heroku and it can be found here: https://exposure-to-art.herokuapp.com
-​
 
 ## Set Up 
 
@@ -43,9 +47,7 @@ $ yarn serve:front
 <!-- Run the backend in your localhost: -->
 $ yarn serve:back
 ```
-## Brief
 
-This was my final project at GA. We were given the option to either work in a group or individually. Following the third project which was group, I decided to do it individually so that I could use the opportunity as a means to test my own learning and showcase my abilities. Working individually with just one week I had to decide which features were core MVP and which ones I would have to cut for the deadline, and add further on down the line.
 
 ## User Experience
 
@@ -133,13 +135,13 @@ Mapbox
       .catch(err => console.log(err))
   }
 ```
-
+## Wins 
+When I first started this project, I had only been learning Python and PostgreSQL for one week.  Django framework, allowed me to set up a fully-functional back-end in just a day and a half giving me lots of time to focus on the front-end. I was also proud that I managed to do this project alone to prove to myself that I am a capable developer. I used it as an opportunity to put into practise all the skills I had learnt over the 12 weeks.
 
 ## Future Features 
 When planning I wanted to have a heavier focus on the front-end. I intended to have three different views: a card view, calendar view and map view. Sadly I ran out of time to do the calendar view but I am planning to add this feature in the near future. 
 
-## Wins 
-When I first started this project, I had only been learning Python and PostgreSQL for one week.  Django framework, allowed me to set up a fully-functional back-end in just a day and a half giving me lots of time to focus on the front-end. I was also proud that I managed to do this project alone to prove to myself that I am a capable developer. I used it as an opportunity to put into practise all the skills I had learnt over the 12 weeks.
+
 
 
 
