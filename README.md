@@ -55,7 +55,7 @@ The user does not have to be logged in to browse the website for exhibitions. Wh
 
 <img src="./frontend/src/assets/homepage.png" >
 
-If they aren't a gallerist thye are redirected to the index page to browse the exhibitions.
+If they aren't a gallerist they are redirected to the index page to browse the exhibitions.
 
 <img src="./frontend/src/assets/indexcard.png" >
 
@@ -68,6 +68,9 @@ If they already have an account they click on the link and are redirected to the
 <img src="./frontend/src/assets/login.png" >
 
 Once they are logged in they land on the index page to browse the exhibitions, just like a user who isnt logged in. The only difference is that they are given the option in the top left hand corner of the navbar to add an exhibition as well as logout.
+
+<img src="./frontend/src/assets/addexhib.png" >
+
 
 The user can refine their seach for exhibitions by typing in artists in the nav bar aswell as filter by category in the dropdown menu.  When they click on a card it takes them to the show page to find out more about an exhibition. 
 
